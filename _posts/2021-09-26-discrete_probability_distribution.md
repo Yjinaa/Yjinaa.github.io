@@ -1,8 +1,8 @@
 ---
 layout: post
-title: [데이터 분석을 위한 수학] 이산 확률 분포
+title: 데이터 분석을 위한 수학_이산 확률 분포
 date: 2021-09-10 00:32:00 +0300
-description: 데이터 분석 입문을 위한 통계_이산 확률 분포
+description: 데이터 분석 입문을 위한 통계
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [statistics,study,probability] # add tag
