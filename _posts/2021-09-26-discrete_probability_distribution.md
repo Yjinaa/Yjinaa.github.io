@@ -15,9 +15,11 @@ tags: [statistics,study,probability] # add tag
 
 ​	그래서 일 끝나면 어느정도 기간을 잡고 다시 밑바닥부터 통계 공부를 해야겠다는 생각을 가지고 있었는데, 지금이 바로 그 기회인 것 같아 글을 적게 되었습니다. 부족한 글이지만, 어느 누군가에게는 도움이 되길 바라면서 시작하겠습니다. 이번 글은 확률분포 중 이산형 확률 분포의 개념에 대한 글입니다.  
 
-(소개한 분포들의 선정 기준은 성윤님의 **데이터 사이언스 인터뷰 질문 모음집**을 참고했습니다!)
+(소개한 분포들의 선정 기준은 성윤님의 [**데이터 사이언스 인터뷰 질문 모음집**](https://zzsza.github.io/data/2018/02/17/datascience-interivew-questions/#%EA%B3%B5%ED%86%B5-%EC%A7%88%EB%AC%B8)을 참고했습니다! 감사합니다🙂)
 
-https://zzsza.github.io/data/2018/02/17/datascience-interivew-questions/#%EA%B3%B5%ED%86%B5-%EC%A7%88%EB%AC%B8
+  
+
+  
 
 ## 확률 분포
 
