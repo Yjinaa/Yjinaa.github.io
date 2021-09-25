@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 데이터 종사자로서 알아두면 언젠가 도움되는 통계 지식
+title: [데이터 분석을 위한 수학] 이산 확률 분포
 date: 2021-09-10 00:32:00 +0300
-description: 그동안 방대한 메모를 방치하고 계셨다면
+description: 데이터 분석 입문을 위한 통계_이산 확률 분포
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [statistics,study,probability] # add tag
