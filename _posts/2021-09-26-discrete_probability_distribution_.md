@@ -6,7 +6,7 @@ description: 데이터 분석 입문을 위한 통계
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [statistics,study,probability] # add tag
-
+use_math: true
 ---
 
 ## 들어가면서 
