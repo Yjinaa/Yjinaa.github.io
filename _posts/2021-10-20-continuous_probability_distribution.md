@@ -54,11 +54,11 @@ _통계학에서 대표적인 연속 확률 분포, 도수 분포 곡선이 평�
 
 정규 분포의 확률 밀도 함수, 평균, 분산은 다음과 같습니다.
 $$
-\begin{align}
-\frac{1}{\sigma\sqrt{2\pi}}exp\left ( \begin{array} n-\frac{(x-\mu)^2}{2\sigma^2} \end{array} \right)\\ \\
-E(x) = \mu\\ \\
-V(x) = \sigma^2
-\end{align}
+\begin{align*}
+&\frac{1}{\sigma\sqrt{2\pi}}exp\left ( \begin{array} n-\frac{(x-\mu)^2}{2\sigma^2} \end{array} \right)\\ \\
+&E(x) = \mu\\ \\
+&V(x) = \sigma^2
+\end{align*}
 $$
 
 특히 평균이 0이고 표준편차가 1인 정규분포를 표준 정규 분포라고 합니다.
@@ -75,11 +75,11 @@ _a개의 사건이 일어날 때까지 걸리는 시간에 대한 연속 확률 
 
 
 $$
-\begin{align}
-\frac{1}{\Gamma(a)}x^{\alpha-1}e^{-x}dx\\ \\
-E(x) = \alpha\beta\\ \\
-V(x) = \alpha\beta^2
-\end{align}
+\begin{align*}
+&\frac{1}{\Gamma(a)}x^{\alpha-1}e^{-x}dx\\ \\
+&E(x) = \alpha\beta\\ \\
+&V(x) = \alpha\beta^2
+\end{align*}
 $$
 감마 분포는 a번의 사건이 일어날 때까지 걸리는 시간에 대한 연속 확률 분포입니다. 알파는 형태모수, 베타는 첫 번째 사건이 발생할 때 까지 소요된 시간으로 척도 모수라고 합니다.
 
@@ -97,13 +97,13 @@ _확률에 대한 확률 분포_
 
 베타 분포의 확률 밀도 함수, 평균, 분산은 다음과 같습니다.
 $$
-\begin{align}
-X ~ Beta(\alpha, \beta) \\ \\
-f_x(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)} \\ \\
-( 0< x<1, \alpha, \beta=0) \\ \\
-E(x) = \frac{\alpha}{\alpha+\beta}  \\  \\
-V(x) = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
-\end{align}
+\begin{align*}
+&X ~ Beta(\alpha, \beta) \\ \\
+&f_x(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)} \\ \\
+&이 때, ( 0< x<1, \alpha, \beta=0) \\ \\
+&E(x) = \frac{\alpha}{\alpha+\beta}  \\  \\
+&V(x) = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
+\end{align*}
 $$
 베타 분포는 확률에 대한 확률 분포라고 말씀드렸는데요, 예를 들어 여러분들이 제 글을 읽고 긍정적인 반응을 보였던 분들이 7명, 아닌 분들이 3명일 때 앞으로 읽게 될 분들이 긍정적인 반응을 보일 확률이 0.7보다 클 확률을 구하고 싶을 때 쓰일 수 있습니다.
 
@@ -117,12 +117,12 @@ $$
 
 디리클레 분포의 확률밀도함수, 평균, 분산은 다음과 같습니다.
 $$
-\begin{align}
-\sum _{i=1}^{k}x_{i}=1 일 때,\\
-f(x_{1},\cdots ,x_{k};\alpha _{1},\cdots ,\alpha _{k})={\frac {1}{\mathrm {B} (\alpha )}}\prod _{i=1}^{k}x_{i}^{\alpha _{i}-1} \\ \\
-E(x_k) = \frac{\alpha_k}{\Sigma\alpha} \\ \\
-V(x_k) = \frac{\alpha_k(\Sigma\alpha-\alpha_k)}{(\Sigma\alpha)^2(\Sigma\alpha+1)}
-\end{align}
+\begin{align*}
+&\sum _{i=1}^{k}x_{i}=1 일 때,\\
+&f(x_{1},\cdots ,x_{k};\alpha _{1},\cdots ,\alpha _{k})={\frac {1}{\mathrm {B} (\alpha )}}\prod _{i=1}^{k}x_{i}^{\alpha _{i}-1} \\ \\
+&E(x_k) = \frac{\alpha_k}{\Sigma\alpha} \\ \\
+&V(x_k) = \frac{\alpha_k(\Sigma\alpha-\alpha_k)}{(\Sigma\alpha)^2(\Sigma\alpha+1)}
+\end{align*}
 $$
 
 
@@ -144,12 +144,11 @@ _표준 정규분포의 평균의 분포_
 
 t 분포의 확률밀도함수, 평균, 분산은 다음과 같습니다.
 $$
-\begin{align}
-\frac{\Gamma(\frac{\nu+1}{2})}{\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}(1+\frac{t^2}{\nu})^{\frac{v+1}{2}}\\
-\\ E(x) = 0 \\ \\
-Var(x) = \frac{\nu}{\nu-2}, \nu>2
-\end{align}
-
+\begin{align*}
+&\frac{\Gamma(\frac{\nu+1}{2})}{\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}(1+\frac{t^2}{\nu})^{\frac{v+1}{2}}\\ \\
+&E(x) = 0 \\ \\
+&Var(x) = \frac{\nu}{\nu-2}, \nu>2
+\end{align*}
 $$
 
 이 때 Γ(𝑥)는 감마 함수, 𝜈는 자유도에 해당합니다. 보통 평균인 0을 중심으로 2, -2정도면 매우 큰 수로 봅니다. t 분포는 가설 검정, 회귀 분석에도 많이 사용하는 확률 분포입니다. 
@@ -168,11 +167,11 @@ _표준 정규분포의 분산의 분포_
 
 카이제곱 분포의 확률밀도함수, 평균, 분산은 다음과 같습니다.
 $$
-\begin{eqnarray}
-\frac{1}{\Gamma(\frac{k}{2})2^{\frac{k}{2}}}x^{\frac{k}{2}-1}e^{-\frac{x}{2}},  0<x<\infty \\ \\
-E(x) = k \\ \\
-V(x) = 2k
-\end{eqnarray}
+\begin{align*}
+&\frac{1}{\Gamma(\frac{k}{2})2^{\frac{k}{2}}}x^{\frac{k}{2}-1}e^{-\frac{x}{2}},  0<x<\infty \\ \\
+&E(x) = k \\ \\
+&V(x) = 2k
+\end{align*}
 $$
 이 때 k는 자유도입니다. 참고로 카이제곱 분포는 감마 분포의 특수한 형태로도 볼 수 있습니다. 감마 분포에서 알파는 k/2, 베타는 2인 경우를 나타냅니다. 
 
@@ -186,14 +185,14 @@ _두 개의 독립인 카이제곱분포 확률 변수의 비율로 정의되는
 
 ​	F 분포는 주로 집단의 분산을 비교하는 ANOVA 분산분석에 사용됩니다. F 분포 역시 양수만으로 이루어지고, 자유도에 따라 값이 달라집니다. 집단간 분산이 집단 내 분산보다 얼마나 차이나느냐가 핵심입니다. 기준은 1이며 2~4 정도면 충분히 큰 값으로 생각할 수 있습니다. 
 $$
-\begin{eqnarray}
-{\frac {\sqrt {\frac {(d_{1}\,x)^{d_{1}}\,\,d_{2}^{d_{2}}}{(d_{1}\,x+d_{2})^{d_{1}+d_{2}}}}}{x\,\mathrm {B} \!\left({\frac {d_{1}}{2}},{\frac {d_{2}}{2}}\right)}} \\ \\
+\begin{align*}
+&{\frac {\sqrt {\frac {(d_{1}\,x)^{d_{1}}\,\,d_{2}^{d_{2}}}{(d_{1}\,x+d_{2})^{d_{1}+d_{2}}}}}{x\,\mathrm {B} \!\left({\frac {d_{1}}{2}},{\frac {d_{2}}{2}}\right)}} \\ \\
 
-{\frac {\sqrt {\frac {(d_{1}\,x)^{d_{1}}\,\,d_{2}^{d_{2}}}{(d_{1}\,x+d_{2})^{d_{1}+d_{2}}}}}{x\,\mathrm {B} \!\left({\frac {d_{1}}{2}},{\frac {d_{2}}{2}}\right)}}\\ \\
+&{\frac {\sqrt {\frac {(d_{1}\,x)^{d_{1}}\,\,d_{2}^{d_{2}}}{(d_{1}\,x+d_{2})^{d_{1}+d_{2}}}}}{x\,\mathrm {B} \!\left({\frac {d_{1}}{2}},{\frac {d_{2}}{2}}\right)}}\\ \\
 
-E(x) = {\frac {d_{2}}{d_{2}-2}}\!, d_{2}>2  \\ \\
-V(x) = {\frac {2\,d_{2}^{2}\,(d_{1}+d_{2}-2)}{d_{1}(d_{2}-2)^{2}(d_{2}-4)}}\!, d_2 > 4 
-\end{eqnarray}
+&E(x) = {\frac {d_{2}}{d_{2}-2}}\!, d_{2}>2  \\ \\
+&V(x) = {\frac {2\,d_{2}^{2}\,(d_{1}+d_{2}-2)}{d_{1}(d_{2}-2)^{2}(d_{2}-4)}}\!, d_2 > 4 
+\end{align*}
 $$
 
 
