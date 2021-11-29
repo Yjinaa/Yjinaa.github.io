@@ -62,7 +62,7 @@ anaconda-clean --yes # 각각을 삭제하라는 메시지가 표시되지 않�
 
 이후에는 환경 변수 제거를 해주어야합니다. 저는 zsh 기반인데, 혹시 몰라 bash_profile도 동일하게 해주었습니다.
 
-1. bash_profile 환경변수 제거
+1) bash_profile 환경변수 제거
 
 ~~~sh
 open -e .bash_profile
@@ -74,7 +74,7 @@ open -e .bash_profile
 
 위처럼 conda 관련 부분을 모두 주석처리 해주었습니다.
 
-2. zshrc 환경변수 제거
+2) zshrc 환경변수 제거
 
 저와 같이 zsh 기반을 사용하시는 경우 zshrc의 환경변수도 제거해주어야 합니다.
 
@@ -88,7 +88,7 @@ open -e .zshrc
 
 conda initialize 부분을 모두 주석처리하도록 하겠습니다.
 
-3. source
+3) source
 
 이후 **반드시** source 명령어를 사용해주어야합니다. 안그러면 환경변수 삭제가 적용되지 않아 miniforge 설치 이후에도 자꾸 anaconda 폴더를 찾습니다. ㅠㅠ
 
