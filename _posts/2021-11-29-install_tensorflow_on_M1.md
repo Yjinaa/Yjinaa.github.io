@@ -21,9 +21,9 @@ use_math: true
 
 &#160;&#160;자, 위에서 기존 anaconda 환경을 사용하고 계셨던 분들은 삭제 후 miniforge를 재설치하셔야한다고 언급드렸었는데요, 이유는 바로 이러합니다. M1의 arm64 칩은 일반 칩과 작동 방법이 다릅니다. 일반 텐서플로우와 맞지 않기 때문에 다른 유저분들이 설치하듯 pip install tensorflow 했다가는 큰일이 납니다...ㅠㅠ 그래서 현재 애플에서도 아나콘다가 아닌 miniforge3를 공식적으로 지원하고 있습니다. 사실 miniforge나 anaconda나 우선 conda 환경 기반인 건 같으니까 그냥 진행해도 되지 않을까? 하시겠지만..
 
-    ~~~sh
-    conda install -c apple tensorflow-deps
-    ~~~
+~~~shell
+conda install -c apple tensorflow-deps
+~~~
 
 이따가 위 코드를 입력하실 때 **"PackagesNotFoundError: The following packages are not available from current channels: - tensorflow-deps"** 오류를 만나게 되실 것입니다..!
 
