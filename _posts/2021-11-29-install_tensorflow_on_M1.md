@@ -39,7 +39,7 @@ conda install -c apple tensorflow-deps
 
 위 코드를 따라 쳐주세요. 혹시 이 이후 폴더가 그대로다, 하시는 분은 2번 방법을 참고해주세요!
 
-2. 아나콘다 라이브러리를 이용한 삭제
+2) 아나콘다 라이브러리를 이용한 삭제
 
 https://docs.anaconda.com/anaconda/install/uninstall/?highlight=uninstall
 
