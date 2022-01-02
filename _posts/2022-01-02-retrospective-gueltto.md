@@ -1,6 +1,6 @@
 ---
 layout: post
-title: M1 텐서플로우 설치기
+title: 글또 6기 회고
 date: 2022-01-02 20:17:00 +0300
 description: 글또 6기 회고
 img:  # Add image post (optional)
