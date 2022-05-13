@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 글또 7기를 시작하면서
-date: 2021-05-12 22:49:00 +0300
+date: 2022-05-12 22:49:00 +0300
 description: 글또 7기를 시작하면서
 img: geul.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
