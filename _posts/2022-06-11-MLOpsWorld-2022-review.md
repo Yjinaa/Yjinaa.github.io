@@ -49,7 +49,7 @@ use_math: true
 
 ​                           
 
-<img width="569" alt="스크린샷 2022-06-11 오전 1 28 05" src="https://user-images.githubusercontent.com/71372857/173174164-8935f4b1-6d38-44c7-9a27-8eefccfdbcdf.png" style="zoom:25">
+<img width="569" alt="스크린샷 2022-06-11 오전 1 28 05" src="https://user-images.githubusercontent.com/71372857/173174164-8935f4b1-6d38-44c7-9a27-8eefccfdbcdf.png" style="zoom:50">
 
 Exhibition 구역으로 가면 중간 중간 키 큰 테이블에 각 기업들이 제작한 스티커들이 자유롭게 가져갈 수 있도록 놓여있습니다. 귀엽고 참신한 스티커들이 많아 몇 개 가져왔는데, 이건 마지막에 한꺼번에 보여드리겠습니다.
 
@@ -58,7 +58,6 @@ Exhibition 구역으로 가면 중간 중간 키 큰 테이블에 각 기업들�
 <img width="657" alt="스크린샷 2022-06-11 오전 1 39 23" src="https://user-images.githubusercontent.com/71372857/173174623-ec11c375-1d6f-48f5-a077-d97ddf87b9b6.png">
 
 <img width="657" alt="스크린샷 2022-06-11 오전 1 35 14" src="https://user-images.githubusercontent.com/71372857/173174410-f012bfee-d6ee-4bfb-adb2-362db1ebb7b7.png">
-8592bde3efe.png">
 
 간단한 빵과 머핀, 커피, 음료 등도 준비되어 있었습니다.
 
