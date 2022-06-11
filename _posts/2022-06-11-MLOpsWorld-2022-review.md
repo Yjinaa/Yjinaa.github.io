@@ -2,7 +2,7 @@
 layout: post
 title: MLOps World Toronto 2022 컨퍼런스 후기
 date: 2022-06-11 03:38:00 +0300
-description: 2022 MLOps World를 다녀왔습니다
+description: 2022 MLOps World 컨퍼런스에 다녀왔습니다.
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [gueltto,writing,post, conference] # add tag
