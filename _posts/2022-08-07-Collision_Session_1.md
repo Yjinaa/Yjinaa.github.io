@@ -1,8 +1,8 @@
 ---
 layout: post
-title: [Collision Conference] 에릭 슈미트가 말하는 AI와 우리 인간의 미래
+title: Collision Conference _ 에릭 슈미트가 말하는 AI와 우리 인간의 미래
 date: 2022-08-07 02:33:00 +0300
-description: 
+description: 콜리전 세션 하나를 정리해보았습니다.
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [gueltto,writing,post,conference] # add tag
