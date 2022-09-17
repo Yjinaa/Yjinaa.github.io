@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps World Conference _ Supporting Sales Forecasting at Scale for Canada’s Largest Grocery Store
+title: MLOps World Conference _ Supporting Sales Forecasting at Scale for Canada’s Largest Grocery Store (1)
 date: 2022-09-17 00:14:00 +0300
 description: MLOps World 컨퍼런스에서 들었던 세션 중 캐나다 식료품점의 대규모 판매 예측에 대한 발표한 세션을 정리해보았습니다.
 img:  # Add image post (optional)
