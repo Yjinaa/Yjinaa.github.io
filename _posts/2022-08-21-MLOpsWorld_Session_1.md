@@ -2,7 +2,7 @@
 layout: post
 title: Collision Conference _ Top 5 Lessons Learned in Helping Organizations Adopt MLOps Practices
 date: 2022-08-21 02:04:00 +0300
-description: 콜리전 컨퍼런스에서 들었던 세션 중 조직의 MLOps 도입 과정을 지원하며 깨달은 것들을 소개하는 세션을 정리해 보았습니다.
+description: MLOps World 컨퍼런스에서 들었던 세션 중 조직의 MLOps 도입 과정을 지원하며 깨달은 것들을 소개하는 세션을 정리해 보았습니다.
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [gueltto,writing,post,conference] # add tag
@@ -11,7 +11,7 @@ use_math: true
 
 ## **세션 소개**
 
-&#160;&#160;콜리전 컨퍼런스에서 들었던 세션 중 하나로, 조직의 MLOps 시스템 도입 과정을 지원하며 깨달았던 점들을 소개하는 세션입니다. 아마존 AWS의 Shelbee Eigenbrode에 의해 진행되었습니다. 정리 겸 공유차 글을 작성합니다.
+&#160;&#160;MLOps World 컨퍼런스에서 들었던 세션 중 하나로, 조직의 MLOps 시스템 도입 과정을 지원하며 깨달았던 점들을 소개하는 세션입니다. 아마존 AWS의 Shelbee Eigenbrode에 의해 진행되었습니다. 정리 겸 공유차 글을 작성합니다.
 
 ​                                       
 
