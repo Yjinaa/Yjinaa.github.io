@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Collision Conference _ Top 5 Lessons Learned in Helping Organizations Adopt MLOps Practices
+title: MLOps World Conference _ Top 5 Lessons Learned in Helping Organizations Adopt MLOps Practices
 date: 2022-08-21 02:04:00 +0300
 description: MLOps World 컨퍼런스에서 들었던 세션 중 조직의 MLOps 도입 과정을 지원하며 깨달은 것들을 소개하는 세션을 정리해 보았습니다.
 img:  # Add image post (optional)
