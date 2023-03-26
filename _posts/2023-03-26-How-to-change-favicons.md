@@ -5,7 +5,7 @@ date: 2023-03-26 17:02:07 +0900
 description: 파비콘을 바꿔보았습니다.
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [gueltto,writing,post,retrospective] # add tag
+tags: [post,favicon,git,tech trials] # add tag
 use_math: true
 ---
 
