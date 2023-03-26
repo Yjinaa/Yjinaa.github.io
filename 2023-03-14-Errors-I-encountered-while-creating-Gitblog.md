@@ -1,17 +1,39 @@
 ---
 layout: post
-title: MLOps World Conference _ Supporting Sales Forecasting at Scale for Canada’s Largest Grocery Store (2)
-date: 2022-10-02 00:18:07 +0300
-description: MLOps World 컨퍼런스에서 들었던 세션 중 캐나다 식료품점의 대규모 판매 예측에 대한 발표한 세션을 정리해보았습니다.
+title: 깃 블로그를 만들고 수정하며 마주친 에러들
+date: 2023-03-14 06:32:07 +0900
+description: 깃 블로그를 수정하며 겪은 에러들에 관한 이야기입니다.
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [gueltto,writing,post,conference] # add tag
+tags: [CodeHurdles, Git] # add tag
 use_math: true
 ---
 
-## **세션 소개**
+## **Git Blog**
 
-&#160;&#160;MLOps World 컨퍼런스에서 들었던 세션 중 하나로, 캐나다에서 가장 큰 식료품점의 대규모 판매 예측에 대해 소개한 세션입니다. Loblaws의 Cheng Chen, Mefta Sadat에 의해 진행되었습니다. 이전 글에 이어 작성합니다.
+&#160;&#160;오랜만에 깃에 글을 쓰려고 열었는데, 불현듯 테마를 바꾸어보고 싶다는 생각이 들었습니다.
+
+이전에도 테마를 바꾸며 오랜 시간을 할애했던 경험이 있어 분명 금방 끝나지 않을 것이란걸 알면서도, 지킬 테마를 구경하고 있는 저를 발견했습니다.
+
+그래서 결국 또 돌아올 수 없는 강을 건너고.. 지금은 오전 6시 30분 입니다.
+
+그래도 결론부터 말하자면, 오랜만에 시행착오를 겪고 나니 마음은 후련합니다... 이제 git으로는 절대 허둥대지 않을 것 같네요
+
+오늘의 결론 역시 부딪히면서 배우는게 최고다..!
+
+​                         
+
+​                    
+
+#### 첫 번째 난관
+
+&#160;&#160; 우선 제가 테마를 바꾸고 싶었던 가장 큰 이유는 홈과 블로그가 분리되기를 원했기 때문이었습니다. 현재 상태는 접속하자마자 처음 보이는 화면이 바로 글 목록이었는데, 첫 화면이 제 간략한 소개와 이력 정도였으면 했습니다. 그래서 알맞은 테마를 선정하고 다운로드를 받은 후 테마 변경을 시작했습니다. 가장 처음 맞닥뜨렸던 오류는 바로 
+
+
+
+
+
+ [ruby - An error occurred while installing racc (1.6.0), and Bundler cannot continue - Stack Overflow](https://stackoverflow.com/questions/70398847/an-error-occurred-while-installing-racc-1-6-0-and-bundler-cannot-continue) 
 
 ​                                       
 
@@ -104,5 +126,4 @@ use_math: true
 ​                       
 
 ​                         
-
 
