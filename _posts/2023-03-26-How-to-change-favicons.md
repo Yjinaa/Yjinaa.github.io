@@ -41,13 +41,15 @@ https://realfavicongenerator.net 위 링크로 접속합니다.
 
 ​                                           
 
-![스크린샷 2023-03-26 오후 5.12.23](/Users/yeajin/Library/Application Support/typora-user-images/스크린샷 2023-03-26 오후 5.12.23.png)
+<img width="634" alt="스크린샷 2023-03-26 오후 6 01 56" src="https://user-images.githubusercontent.com/71372857/227765764-4ce2e760-5c1b-49fa-aba0-57c71800cec3.png">
 
 'Generate your Favicons and HTML code' 를 클릭합니다.
 
 ​                                                             
 
-![스크린샷 2023-03-26 오후 5.13.27](/Users/yeajin/Library/Application Support/typora-user-images/스크린샷 2023-03-26 오후 5.13.27.png)                                         
+<img width="686" alt="스크린샷 2023-03-26 오후 6 02 47" src="https://user-images.githubusercontent.com/71372857/227765790-fb713448-7b98-42fb-a61b-e73a43dbc6d4.png">
+
+​                                         
 
 'Favicon package' 를 눌러 파일을 다운로드 합니다. 하단 html 코드가 필요하므로 이 창은 아직 닫으시면 안됩니다. 
 
@@ -83,7 +85,9 @@ https://realfavicongenerator.net 위 링크로 접속합니다.
 
 다음으로 적용해보겠습니다. 다시 favicon generator 사이트로 돌아갑니다.
 
-![스크린샷 2023-03-26 오후 5.13.27](/Users/yeajin/Library/Application Support/typora-user-images/스크린샷 2023-03-26 오후 5.13.27.png)
+<img width="685" alt="스크린샷 2023-03-26 오후 6 03 29" src="https://user-images.githubusercontent.com/71372857/227765818-cba15a56-84f6-4005-944f-31bf627f88db.png">
+
+
 
 3번의 코드를 모두 복사해주세요. 이 코드들을 깃 내 html 파일에 붙여넣어 파비콘을 적용해야합니다.
 
