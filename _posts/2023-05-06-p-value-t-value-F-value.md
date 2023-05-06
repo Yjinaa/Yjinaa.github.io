@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 데이터 분석을 위한 수학_이산 확률 분포
-date: 2021-09-26 03:15:00 +0300
+title: 데이터 분석을 위한 수학_p-value, t-value, F-value
+date: 2023-05-06 15:45:00 +0900
 description: 데이터 분석 입문을 위한 통계
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [statistics,study,probability] # add tag
+tags: [statistics,study] # add tag
 use_math: true
 ---
 
