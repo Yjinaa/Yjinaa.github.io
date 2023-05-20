@@ -25,7 +25,7 @@ use_math: true
 
   
 
-민감도(Sensitivity)란 재현율이라고도 불리며, 양성 케이스를 실제 양성으로 맞게 분류하는 비율(True Positive Rate)입니다.<br/>
+민감도(Sensitivity)란 재현율이라고도 불리며, 양성 케이스를 실제 양성으로 맞게 분류하는 비율(True Positive Rate)입니다.
 
   
 $$
@@ -33,11 +33,13 @@ TPR\;(True\,Positive\,Rate) = \frac{TP}{TP+FN}
 $$
   
 
-<br/>이 때 FN은 False Negative의 약자로, 모델이 실제 양성 케이스를 음성으로 잘못 분류하는 경우를 의미합니다.
+이 때 FN은 False Negative의 약자로, 모델이 실제 양성 케이스를 음성으로 잘못 분류하는 경우를 의미합니다.
 
   
 
 특이도(Specificity)란 실제 음성 케이스를 음성으로 맞게 분류하는 비율(True Negative Rate)입니다. 1-특이도는 음성 케이스를 양성으로 잘못 분류하는 비율, 즉 FPR(False Positive Rate)와 같습니다.<br/>
+
+
 
   
 $$
