@@ -21,11 +21,11 @@ use_math: true
 
 ## ROC 커브(Receiver Operating Characteristic curve)
 
-&nbsp; &nbsp;&nbsp;ROC 커브는 다양한 임계값을 기준으로 이진 분류 모델의 성능을 시각화하는 그래프입니다. 이진 분류 모델의 예측 결과를 기반으로, 민감도와 1-특이도간의 관계를 시각화합니다. x축에 1- 특이도를, y축에 민감도를 나타냅니다.
+&nbsp; &nbsp;&nbsp;ROC 커브는 다양한 임계값을 기준으로 이진 분류 모델의 성능을 시각화하는 그래프입니다. 이진 분류 모델의 예측 결과를 기반으로, 민감도와 1-특이도간의 관계를 시각화합니다. x축에 1- 특이도를, y축에 민감도를 나타냅니다.  
 
-​       
+  
 
-민감도(Sensitivity)란 재현율이라고도 불리며, 양성 케이스를 실제 양성으로 맞게 분류하는 비율(True Positive Rate)입니다. 
+민감도(Sensitivity)란 재현율이라고도 불리며, 양성 케이스를 실제 양성으로 맞게 분류하는 비율(True Positive Rate)입니다.<br/>
 
   
 $$
@@ -33,11 +33,11 @@ TPR\;(True\,Positive\,Rate) = \frac{TP}{TP+FN}
 $$
   
 
-이 때 FN은 False Negative의 약자로, 모델이 실제 양성 케이스를 음성으로 잘못 분류하는 경우를 의미합니다.
+<br/>이 때 FN은 False Negative의 약자로, 모델이 실제 양성 케이스를 음성으로 잘못 분류하는 경우를 의미합니다.
 
   
 
-특이도(Specificity)란 실제 음성 케이스를 음성으로 맞게 분류하는 비율(True Negative Rate)입니다. 1-특이도는 음성 케이스를 양성으로 잘못 분류하는 비율, 즉 FPR(False Positive Rate)와 같습니다.
+특이도(Specificity)란 실제 음성 케이스를 음성으로 맞게 분류하는 비율(True Negative Rate)입니다. 1-특이도는 음성 케이스를 양성으로 잘못 분류하는 비율, 즉 FPR(False Positive Rate)와 같습니다.<br/>
 
   
 $$
@@ -45,9 +45,7 @@ FPR\;(False Positive Rate) = \frac{FP}{FP+TN}
 $$
   
 
-이 때 TN은 True Negative의 약자로, 모델이 음성 케이스를 음성으로 맞게 분류하는 경우를 의미합니다. 
-
-
+<br/>이 때 TN은 True Negative의 약자로, 모델이 음성 케이스를 음성으로 맞게 분류하는 경우를 의미합니다.  
 
 따라서 ROC 커브는 여러 임계점을 기준으로 TPR과 FPR의 관계를 나타낸다고 볼 수 있고, TPR이 클수록, FPR이 작을수록 모델 성능이 좋다고 볼 수 있으므로 좋은 분류 모델일수록 ROC 커브는 좌측 상단에 가까워집니다. 이는 높은 민감도와 높은 특이도를 동시에 가진 모델을 의미합니다. 
 
