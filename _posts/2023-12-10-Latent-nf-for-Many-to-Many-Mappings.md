@@ -215,7 +215,7 @@ data-dependent와 non-volume preserving 변환을 통해, 멀티모달 priors는
 
 여기서 $(\cdot)_{d'}$는 잠재 코드를 d’ 차원의 shared part로 제한하는 것을 의미합니다.
 
-$f_{\phi_s}$는 affine coupling layers를 이용한 가역 신경망입니다.  ($f_{\phi_s}=f^{K}*{\phi_s}\circ f^{K-1}*{\phi_s} \cdots \circ f^{1}_{\phi_s}$)
+$f_{\phi_s}$는 affine coupling layers를 이용한 가역 신경망입니다.  $(f_{\phi_s}=f^{K}*{\phi_s}\circ f^{K-1}*{\phi_s} \cdots \circ f^{1}_{\phi_s})$
 
 이는 Jacobians 연산을 계산하기 쉽도록 해주는데, Jabobian 연산은 가역 신경망의 계층에 대해 삼각행렬로써 표현되기 때문입니다.
 
@@ -241,14 +241,14 @@ $h_{\omega_v}:z_v \mapsto x_v$ 그리고 $h_{\omega_t}:z_t \mapsto x_t$ 는 각�
 
 이미지에 관해서는, input image $x_v$와 reconstructed 이미지 $\tilde{x}_v$ 사이의 reconstruction error는 $L^{rec}_v(x_v,\tilde{x}_v)=\Vert x_v-\tilde{x}_v\Vert ,$  이 때 $\Vert \cdot\Vert $는 $\ell_1, \ell_2$  둘 다 가능합니다.
 
-더불어  $logq_{\theta_1}(f_{\phi_s}((z_v)*{d'})\vert x_t)$를 $(z_v)*{d'}$를 $f_{\phi_s}$ 아래의 텍스트의 잠재 공간으로의 매핑하는데의 코스트로 정의합니다.  짝을 이루는 데이터 ($x_t, x_v)$의 인코딩된 텍스트 표현 $(z_t)*{d'}$와 변환된 이미지 표현 $f*{\phi_s}((z_v)_{d'})$ 사이에 mse를 이용합니다.
+더불어  $logq_{\theta_1}(f_{\phi_s}((z_v)*{d'})\vert x_t)$를 $(z_v)*{d'}$를 $f_{\phi_s}$ 아래의 텍스트의 잠재 공간으로의 매핑하는데의 코스트로 정의합니다.  짝을 이루는 데이터 $(x_t, x_v)$의 인코딩된 텍스트 표현 $(z_t)*{d'}$와 변환된 이미지 표현 $f*{\phi_s}((z_v)_{d'})$ 사이에 mse를 이용합니다.
 
 논문 초반부의 ELBO, 학습된 latent priors, 가역 매핑, 그리고 방금 정의한 reconstruction terms를 연결하여, semi-supervised generative model framework의 목적함수는 아래의 식을 최소화하는 것이 됩니다.
-
 
 $$
 L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v)\Vert p_{\phi_s}(z_s))+\\\lambda_2D_{KL}(q_{\theta_2}(z_t'\vert x_t, z_s)\Vert p_{\phi_t}(z_t'\vert z_s))+\lambda_3D_{KL}(q_{\theta_3}(z_v'\vert x_v, z_s)\Vert p_{\phi_v}(z_v'\vert z_s))+\\\lambda_4L^{rec}_t(x_t,\tilde{x}_t) + \lambda_5L^{rec}_v(x_v,\tilde{x}_v)
 $$
+
 
 > **Loss의 구성**
 >
@@ -263,7 +263,7 @@ $$
 
 여기서 $\mu = \{\theta, \phi_s, \phi_v, \phi_t, \omega_v, \omega_t\}$는 학습되는 파라미터들이며, $\lambda_i, i=\{1,...,5\}$는 regularization 파라미터입니다.
 
-$\tilde{x}_t$와 $\tilde{x}*v$는 텍스트와 이미지 샘플들로 디코딩된다는 점을 상기시켜봅시다.  연구진은 공유된 잠재 공간에 대한 사전 확률 $p*{\phi_s}(z_s)$을 균일 분포로 가정합니다. 이러한 공유된 차원의 균일 사전 확률의 강도는 regularization 파라미터 $\lambda_1$를 통해 조절될 수 있습니다.
+$\tilde{x}_t$와 $\tilde{x}*v는$ 텍스트와 이미지 샘플들로 디코딩된다는 점을 상기시켜봅시다.  연구진은 공유된 잠재 공간에 대한 사전 확률 $p*{\phi_s}(z_s)$을 균일 분포로 가정합니다. 이러한 공유된 차원의 균일 사전 확률의 강도는 regularization 파라미터 $\lambda_1$를 통해 조절될 수 있습니다.
 
 연구진은 모델이 양방향 다대다 매핑을 허용한다고 말합니다. 예를 들어, 이미지 도메인으로부터의 데이터 포인트 $x_v$가 주어지고 이로 부터 잠재 인코딩 $z_v$가 주어지면, 이를 텍스트 도메인으로 매핑합니다. 이 때, 가역 변환을 통해 매핑합니다. ($z_s = f_{\phi_s}(z_s)$) 
 
