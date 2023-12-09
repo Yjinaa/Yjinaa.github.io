@@ -205,11 +205,11 @@ data-dependent와 non-volume preserving 변환을 통해, 멀티모달 priors는
 
 ($d>=d')$ 차원을 가진 잠재변수 $z_v$가 분포 $p_v(x_v)$에 대해 인코딩 됐다고 합시다.
 
-일대일 대응(bijective mapping) $f_{\phi_s}:(z_v)*{d'} \mapsto(z_t)*{d'}$는 가역 매핑을 통해 학습됩니다.
+일대일 대응(bijective mapping) $f_{\phi_s}:(z_v)\ast {d'} \mapsto(z_t)\ast {d'}$는 가역 매핑을 통해 학습됩니다.
 
 여기서 $(\cdot)_{d'}$는 잠재 코드를 d’ 차원의 shared part로 제한하는 것을 의미합니다.
 
-$f_{\phi_s}$는 affine coupling layers를 이용한 가역 신경망입니다.  $(f_{\phi_s}=f^{K}*{\phi_s}\circ f^{K-1}*{\phi_s} \cdots \circ f^{1}_{\phi_s})$
+$f_{\phi_s}$는 affine coupling layers를 이용한 가역 신경망입니다.  $(f_{\phi_s}=f^{K}\ast {\phi_s}\circ f^{K-1}\ast {\phi_s} \cdots \circ f^{1}_{\phi_s})$
 
 이는 Jacobians 연산을 계산하기 쉽도록 해주는데, Jabobian 연산은 가역 신경망의 계층에 대해 삼각행렬로써 표현되기 때문입니다.
 
@@ -219,7 +219,7 @@ $f_{\phi_s}$는 affine coupling layers를 이용한 가역 신경망입니다.  
 
 supervision signal로 차원을 conditioning함으로써, 연구진은 차원을 풀지 않고도 unsupervised information에 대한 차원에서의 중복성을 최소화했다고 합니다.
 
- $q_{\theta_2}(z'*t\vert z_s, x_t)$와 $q*{\theta_3}(z'_v\vert z_s, x_v)$의 멀티 모달 조건부 사전 확률은 non-volumne-preserving normalizing flow 모델을 통해 학습되며, 이는 각각 $\phi_t$와 $\phi_v$에 의해 파라미터화됩니다.
+ $q_{\theta_2}(z'\ast t\vert z_s, x_t)$와 $q\ast {\theta_3}(z'_v\vert z_s, x_v)$의 멀티 모달 조건부 사전 확률은 non-volumne-preserving normalizing flow 모델을 통해 학습되며, 이는 각각 $\phi_t$와 $\phi_v$에 의해 파라미터화됩니다.
 
 데이터의 log-likelihood terms는 (negative) reconstruction errors로 정의됩니다.
 
@@ -227,7 +227,7 @@ $\theta_v = \{\theta_1, \theta_3\}$ 일 때, $g_{\theta_v}:x_v \mapsto z_v$와, 
 
 $h_{\omega_v}:z_v \mapsto x_v$ 그리고 $h_{\omega_t}:z_t \mapsto x_t$ 는 각각 파라미터 $\omega_v$와 $\omega_t$를 가진 이미지와 텍스트 디코더입니다.
 
-이 때  $\tilde{x}*v=h*{\omega_v}(g_{\theta_v}(x_v))$ 와 $\tilde{x}*t=h*{\omega_t}(g_{\theta_t}(x_t))$는 디코딩된 이미지와 텍스트 샘플을 의미합니다.
+이 때  $\tilde{x}\ast v=h\ast {\omega_v}(g_{\theta_v}(x_v))$ 와 $\tilde{x}\ast t=h\ast {\omega_t}(g_{\theta_t}(x_t))$는 디코딩된 이미지와 텍스트 샘플을 의미합니다.
 
 텍스트에 대해서는, 텍스트 디코더로부터의 이전 reconstruced words $(\tilde{x})_{0:j-1}$에서 주어진 ground truth 문장 $x_t$의 $j^{th}$단어에 대한 출력 확률 $(x_t)_j$를 고려하고, reconstruction error을 정의합니다.
 
@@ -235,7 +235,7 @@ $h_{\omega_v}:z_v \mapsto x_v$ 그리고 $h_{\omega_t}:z_t \mapsto x_t$ 는 각�
 
 이미지에 관해서는, input image $x_v$와 reconstructed 이미지 $\tilde{x}_v$ 사이의 reconstruction error는 $L^{rec}_v(x_v,\tilde{x}_v)=\Vert x_v-\tilde{x}_v\Vert ,$  이 때 $\Vert \cdot\Vert $는 $\ell_1, \ell_2$  둘 다 가능합니다.
 
-더불어  $logq_{\theta_1}(f_{\phi_s}((z_v)*{d'})\vert x_t)$를 $(z_v)*{d'}$를 $f_{\phi_s}$ 아래의 텍스트의 잠재 공간으로의 매핑하는데의 코스트로 정의합니다.  짝을 이루는 데이터 $(x_t, x_v)$의 인코딩된 텍스트 표현 $(z_t)*{d'}$와 변환된 이미지 표현 $f*{\phi_s}((z_v)_{d'})$ 사이에 mse를 이용합니다.
+더불어  $logq_{\theta_1}(f_{\phi_s}((z_v)\ast {d'})\vert x_t)$를 $(z_v)\ast {d'}$를 $f_{\phi_s}$ 아래의 텍스트의 잠재 공간으로의 매핑하는데의 코스트로 정의합니다.  짝을 이루는 데이터 $(x_t, x_v)$의 인코딩된 텍스트 표현 $(z_t)\ast {d'}$와 변환된 이미지 표현 $f\ast {\phi_s}((z_v)_{d'})$ 사이에 mse를 이용합니다.
 
 논문 초반부의 ELBO, 학습된 latent priors, 가역 매핑, 그리고 방금 정의한 reconstruction terms를 연결하여, semi-supervised generative model framework의 목적함수는 아래의 식을 최소화하는 것이 됩니다.<br/>
 
@@ -256,11 +256,11 @@ $$\begin{align} L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v
 
 여기서 $\mu = \{\theta, \phi_s, \phi_v, \phi_t, \omega_v, \omega_t\}$는 학습되는 파라미터들이며, $\lambda_i, i=\{1,...,5\}$는 regularization 파라미터입니다.
 
-$\tilde{x}_t$와 $\tilde{x}*v$ 는 텍스트와 이미지 샘플들로 디코딩된다는 점을 상기시켜봅시다.  연구진은 공유된 잠재 공간에 대한 사전 확률 $p*{\phi_s}(z_s)$을 균일 분포로 가정합니다. 이러한 공유된 차원의 균일 사전 확률의 강도는 regularization 파라미터 $\lambda_1$를 통해 조절될 수 있습니다.
+$\tilde{x}_t$와 $\tilde{x}\ast v$ 는 텍스트와 이미지 샘플들로 디코딩된다는 점을 상기시켜봅시다.  연구진은 공유된 잠재 공간에 대한 사전 확률 $p\ast {\phi_s}(z_s)$을 균일 분포로 가정합니다. 이러한 공유된 차원의 균일 사전 확률의 강도는 regularization 파라미터 $\lambda_1$를 통해 조절될 수 있습니다.
 
 연구진은 모델이 양방향 다대다 매핑을 허용한다고 말합니다. 예를 들어, 이미지 도메인으로부터의 데이터 포인트 $x_v$가 주어지고 이로 부터 잠재 인코딩 $z_v$가 주어지면, 이를 텍스트 도메인으로 매핑합니다. 이 때, 가역 변환을 통해 매핑합니다. ($z_s = f_{\phi_s}(z_s)$) 
 
-따라서 학습된 잠재 사전 확률 $p_{\phi_s}(z'_t\vert z_s)$로부터의 샘플링을 통해 다양한 텍스트를 생성해낼 수 있다고 합니다. 텍스트를 주어 이미지를 샘플링 하는 경우에도 학습된 사전 확률 $p_{\phi_s}(z'_v\vert z_s)$를 통해 유사한 절차를 따릅니다.
+따라서 학습된 잠재 사전 확률 $p_{\phi_s}(z\prime_t\vert z_s)$로부터의 샘플링을 통해 다양한 텍스트를 생성해낼 수 있다고 합니다. 텍스트를 주어 이미지를 샘플링 하는 경우에도 학습된 사전 확률 $p_{\phi_s}(z\prime _v\vert z_s)$를 통해 유사한 절차를 따릅니다.
 
 조건부 생성 작업의 경우, supervised 잠재 공간에서 샘플링할 필요가 없기 때문에, 균일 사전 확률 $p_{\phi_s}(z_s)$가 실제 응용에서 이점이 됩니다. ( → 디코더에 대한 제약을 완화하므로)
 
