@@ -163,6 +163,7 @@ $$
 
 
 따라서 최종 ELBO는 다음과 같이 정의됩니다.
+
 $$
 logp_μ(x_t,x_v) ≥ E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_2}(z'_t|x_t,z_s)}[logp_μ(x_t|z_s,z'_t)]\\
 +E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_3}(z'_v |x_v,z_s)}[logp_μ(x_v|z_s,z'_v )]−D_{KL}(q_{θ_1}(z_s|x_t,x_v)||p_{φ_s}(z_s)) \\−D_{KL}(q_{θ_2}(z'_t|x_t,z_s) p_{φ_t}(z'_t|z_s))−D_{KL}(q_{θ_3}(z'_v|x_v,z_s)|| p_{φ_v}(z'_v|z_s)]
