@@ -97,13 +97,13 @@ COCO 데이터셋에서 real-world의 이미지 캡셔닝과 text-to-image 합�
 
 텍스트와 이미지가 각각 서로 다른 생성 과정을 따르며, 각각의 ground truth 분포 $p_t(x_t)$와 $p_v(x_v)$를 가지는 상황에서, semi-supervised setting 하에 텍스트와 이미지의 joint distributions $p_\mu (x_t, x_v)$를 학습하기 위해, 변분 추론을 기반으로 하는 새로운 joint 생성 모델을 고안했습니다. : Latent Normalizing Flows for Many-to-Many Mappings(LNFMM)
 
-해당 모델은 joint 확률분포를 데이터 ${x_t, x_v}$와 latent variables $z$를 $\mu$로 파라미터화 되는 분포 $p_\mu (x_t, x_v, z) = p_\mu(x_t, x_v|z)p_\mu(z)$와 함께 정의했습니다.
+해당 모델은 joint 확률분포를 데이터 ${x_t, x_v}$와 latent variables $z$를 $\mu$로 파라미터화 되는 분포 $p_\mu (x_t, x_v, z) = p_\mu(x_t, x_v\vert z)p_\mu(z)$와 함께 정의했습니다.
 
 여기서 $\theta$로 파라미터화 되는 variational posterior $q_\theta(z|x_t, x_v)$를 이용해 $p_\mu(x_t, x_v)$의 likelihood를 극대화함
 
 서로 다른 생성 과정을 가진 분포들, 예를 들어 이미지와 텍스트를 공동으로 모델링하는 데 관심이 있기 때문에, latent 분포의 선택이 매우 중요합니다. 
 
-공유된 잠재 분포로의 매핑은 굉장히 제한적일 수 있습니다. 이 논문에서는 LNFMM 모델의 variational posterior $q_\theta(z|x_t, x_v)$과 그 factorization(분해)에서부터 논의를 시작하고, 그 다음 normalizing flow 기반의 priors에 대해 소개합니다.. priors는  $q_\theta(z|x_t, x_v)$가 더욱 복잡하도록, 그리고 multimodal로 만들어주어, 다양한 다대다 매핑을 가능하게 합니다.
+공유된 잠재 분포로의 매핑은 굉장히 제한적일 수 있습니다. 이 논문에서는 LNFMM 모델의 variational posterior $q_\theta(z\vert x_t, x_v)$과 그 factorization(분해)에서부터 논의를 시작하고, 그 다음 normalizing flow 기반의 priors에 대해 소개합니다.. priors는  $q_\theta(z \vert x_t, x_v)$가 더욱 복잡하도록, 그리고 multimodal로 만들어주어, 다양한 다대다 매핑을 가능하게 합니다.
 
 ### Factorizing the latent posterior
 
@@ -142,29 +142,43 @@ variational posterior을 이용해 직접적으로  $p_\mu(x_t, x_v)$의 log-lik
 
 ### *3.1 Deriving The Log-Evidence Lower Bound*
 
-$p_\mu (x_t, x_v)$ 의 marginal likelihood를 최대화하는 것은 intractable합니다. 따라서 variational inference framework를 개발했는데, 이는 데이터의 log-likelihood의 variational lower bound를 최대화합니다. 
+$p_\mu (x_t, x_v)$ 의 marginal likelihood를 최대화하는 것은 intractable합니다. 따라서 variational inference framework를 개발했는데, 이는 데이터의 log-likelihood의 variational lower bound를 최대화합니다.   
+
+  
 $$
-log{p_\mu} (x_t, x_v) \ge E_{q_\theta(z|x_t,x_v)}[logp_\mu(x_t, x_v|z)] + E_{q_\theta(z|x_t,x_v)}[logp_\phi(z) - logq_\theta(z|x_t, x_v)] 
+log{p_\mu} (x_t, x_v) \ge E_{q_\theta(z|x_t,x_v)}[logp_\mu(x_t, x_v|z)] + E_{q_\theta(z|x_t,x_v)}[logp_\phi(z) - logq_\theta(z|x_t, x_v)]
 $$
-여기서 첫 번째 텀은 reconstruction error입니다. 두 번째 텀은 variational posterior과 prior간 KL-divergence를 최소화합니다. 앞서 말한 factorization을 통해 reconstruction term을 아래와 같이 작성할 수 있습니다. 
+  
+
+여기서 첫 번째 텀은 reconstruction error입니다. 두 번째 텀은 variational posterior과 prior간 KL-divergence를 최소화합니다. 앞서 말한 factorization을 통해 reconstruction term을 아래와 같이 작성할 수 있습니다.   
+
+  
 $$
 Eq_θ(z_s,z'_t,z'_v |x_t,x_v)[logp_μ(x_t|z_s,z'_t,z'_v )+logp_μ(x_v|z_s,z'_t,z'_v )]
 $$
+  
+
 도메인별 잠재 차원 $z'_t, z'_v$ 와 공유된 잠재 차원 $z_s$의 조건부 독립을 가정한다면 아래와 같이 단순화 될 수 있습니다.
+
+  
 $$
 E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_2}(z'_t|x_t,z_s)}[logp_μ(x_t|z_s,z'_t)]+E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_3}(z'_v |x_v,z_s)}[logp_μ(x_v|z_s,z'_v )]
 $$
-chain rule을 이용하여 KL-divergence term은 아래와 같이 단순화 될 수 있습니다.
-$$
-D_{KL}(q_θ(z_s, z'_t, z'_v|x_t, x_v) ||p_φ(z_s, z'_t, z'_v )) = D_{KL}(q_{θ_1} (z_s|x'_t, x_v) ||p_{φ_s} (z_s))+\\
-D_{KL}(q_{θ_2}(z'_t|x_t,z_s) p_{φ_t}(z'_t|z_s))+D_{KL}(q_{θ_3}(z'_v|x_v,z_s) ||p_{φ_v}(z'_v|z_s))
-$$
+  
 
+chain rule을 이용하여 KL-divergence term은 아래와 같이 단순화 될 수 있습니다.
+
+  
+$$
+D_{KL}(q_θ(z_s, z'_t, z'_v|x_t, x_v) \Vert p_φ(z_s, z'_t, z'_v )) = D_{KL}(q_{θ_1} (z_s|x'_t, x_v)\Vert p_{φ_s} (z_s))+\\
+D_{KL}(q_{θ_2}(z'_t|x_t,z_s) p_{φ_t}(z'_t|z_s))+D_{KL}(q_{θ_3}(z'_v|x_v,z_s) \Vert p_{φ_v}(z'_v|z_s))
+$$
+  
 
 따라서 최종 ELBO는 다음과 같이 정의됩니다.
 $$
-logp_μ(x_t,x_v) ≥ E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_2}(z'_t|x_t,z_s)}[logp_μ(x_t|z_s,z'_t)]\\
-+E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_3}(z'_v |x_v,z_s)}[logp_μ(x_v|z_s,z'_v )]−D_{KL}(q_{θ_1}(z_s|x_t,x_v)||p_{φ_s}(z_s)) \\−D_{KL}(q_{θ_2}(z'_t|x_t,z_s) p_{φ_t}(z'_t|z_s))−D_{KL}(q_{θ_3}(z'_v|x_v,z_s)|| p_{φ_v}(z'_v|z_s)]
+logp_μ(x_t,x_v) ≥ E_{q_{θ_1}(z_\vert x_t,x_v)q_{θ_2}(z'_t\vert x_t,z_s)}[logp_μ(x_t\vert z_s,z'_t)]\\
++E_{q_{θ_1}(z_s\vert x_t,x_v)q_{θ_3}(z'_v \vert x_v,z_s)}[logp_μ(x_v\vert z_s,z'_v )]−D_{KL}(q_{θ_1}(z_s\vert x_t,x_v)\Vert p_{φ_s}(z_s)) \\−D_{KL}(q_{θ_2}(z'_t\vert x_t,z_s) p_{φ_t}(z'_t\vert z_s))−D_{KL}(q_{θ_3}(z'_v \vert x_v,z_s) \Vert p_{φ_v}(z'_v \vert z_s)]
 $$
 
 
@@ -216,7 +230,7 @@ $f_{\phi_s}$는 affine coupling layers를 이용한 가역 신경망입니다.  
 
 supervision signal로 차원을 conditioning함으로써, 연구진은 차원을 풀지 않고도 unsupervised information에 대한 차원에서의 중복성을 최소화했다고 합니다.
 
-$q_{\theta_2}(z'*t|z_s, x_t)$와 $q*{\theta_3}(z'_v|z_s, x_v)$의 멀티 모달 조건부 사전 확률은 *Eq.7*의 non-volumne-preserving normalizing flow 모델을 통해 학습되며, 이는 각각 $\phi_t$와 $\phi_v$에 의해 파라미터화됩니다.
+$q_{\theta_2}(z'*t\vert z_s, x_t)$와 $q*{\theta_3}(z'_v\vert z_s, x_v)$의 멀티 모달 조건부 사전 확률은 *Eq.7*의 non-volumne-preserving normalizing flow 모델을 통해 학습되며, 이는 각각 $\phi_t$와 $\phi_v$에 의해 파라미터화됩니다.
 
 데이터의 log-likelihood terms는 (negative) reconstruction errors로 정의됩니다.
 
@@ -228,24 +242,24 @@ $h_{\omega_v}:z_v \mapsto x_v$ 그리고 $h_{\omega_t}:z_t \mapsto x_t$ 는 각�
 
 텍스트에 대해서는, 텍스트 디코더로부터의 이전 reconstruced words $(\tilde{x})_{0:j-1}$에서 주어진 ground truth 문장 $x_t$의 $j^{th}$단어에 대한 출력 확률 $(x_t)_j$를 고려하고, reconstruction error을 정의합니다.
 
- → $L^{rec}_t(x_t, \tilde{x}*t)=-\sum_jlogp*\mu((x_t)_j|(\tilde{x}*t)*{0:j-1})$
+ → $L^{rec}_t(x_t, \tilde{x}*t)=-\sum_jlogp*\mu((x_t)_j\vert (\tilde{x}*t)*{0:j-1})$
 
-이미지에 관해서는, input image $x_v$와 reconstructed 이미지 $\tilde{x}_v$ 사이의 reconstruction error는 $L^{rec}_v(x_v,\tilde{x}_v)=||x_v-\tilde{x}_v||,$  이 때 $||\cdot||$는 $\ell_1, \ell_2$  둘 다 가능합니다.
+이미지에 관해서는, input image $x_v$와 reconstructed 이미지 $\tilde{x}_v$ 사이의 reconstruction error는 $L^{rec}_v(x_v,\tilde{x}_v)=\Vert x_v-\tilde{x}_v\Vert ,$  이 때 $\Vert \cdot\Vert $는 $\ell_1, \ell_2$  둘 다 가능합니다.
 
-더불어 $logq_{\theta_1}(f_{\phi_s}((z_v)*{d'})|x_t)$를 $(z_v)*{d'}$를 $f_{\phi_s}$ 변환 아래의 텍스트의 잠재 공간으로의 매핑하는데의 코스트로 정의합니다.  짝을 이루는 데이터 ($x_t, x_v)$의 인코딩된 텍스트 표현 $(z_t)*{d'}$와 변환된 이미지 표현 $f*{\phi_s}((z_v)_{d'})$ 사이에 mse를 이용합니다.
+더불어 $logq_{\theta_1}(f_{\phi_s}((z_v)*{d'})\vert x_t)$를 $(z_v)*{d'}$를 $f_{\phi_s}$ 변환 아래의 텍스트의 잠재 공간으로의 매핑하는데의 코스트로 정의합니다.  짝을 이루는 데이터 ($x_t, x_v)$의 인코딩된 텍스트 표현 $(z_t)*{d'}$와 변환된 이미지 표현 $f*{\phi_s}((z_v)_{d'})$ 사이에 mse를 이용합니다.
 
 논문 초반부의 ELBO, 학습된 latent priors, 가역 매핑, 그리고 방금 정의한 reconstruction terms를 연결하여, semi-supervised generative model framework의 목적함수는 아래의 식을 최소화하는 것이 됩니다.
 
 
 $$
-L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s|x_t, x_v)||p_{\phi_s}(z_s))+\\\lambda_2D_{KL}(q_{\theta_2}(z_t'|x_t, z_s)||p_{\phi_t}(z_t'|z_s))+\lambda_3D_{KL}(q_{\theta_3}(z_v'|x_v, z_s)||p_{\phi_v}(z_v'|z_s))+\\\lambda_4L^{rec}_t(x_t,\tilde{x}_t) + \lambda_5L^{rec}_v(x_v,\tilde{x}_v)
+L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v)\Vert p_{\phi_s}(z_s))+\\\lambda_2D_{KL}(q_{\theta_2}(z_t'\vert x_t, z_s)\Vert p_{\phi_t}(z_t'\vert z_s))+\lambda_3D_{KL}(q_{\theta_3}(z_v'\vert x_v, z_s)\Vert p_{\phi_v}(z_v'\vert z_s))+\\\lambda_4L^{rec}_t(x_t,\tilde{x}_t) + \lambda_5L^{rec}_v(x_v,\tilde{x}_v)
 $$
 
 > **Loss의 구성**
 >
-> - $\lambda_1D_{KL}(q_{\theta_1}(z_s|x_t, x_v)||p_{\phi_s}(z_s))$: 공유된 잠재변수 $z_s$에 대한 사후 분포와 사전 분포 사이의 KL Divergence → $z_s$가 모델링하는 공유 정보가 얼마나 잘 학습되었는지를 나타내는 지표
-> - $\lambda_2D_{KL}(q_{\theta_2}(z_t'|x_t, z_s)||p_{\phi_t}(z_t'|z_s))$ : 텍스트 도메인에 특화된 잠재 변수 $z_t'$에 대한 사후 분포와 사전 분포 사이의 DKL → 텍스트 데이터의 도메인별 정보가 얼마나 잘 학습되었는지를 나타냄
-> - $\lambda_3D_{KL}(q_{\theta_3}(z_v'|x_v, z_s)||p_{\phi_v})$ : 이미지 도메인에 특화된 잠재변수 $z_v'$에 대한 사후 분포와 사전 분포 사이의 DKL → 이미지 데이터의 도메인별 정보가 얼마나 잘 학습되었는지를 나타냄
+> - $\lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v)\Vert p_{\phi_s}(z_s))$: 공유된 잠재변수 $z_s$에 대한 사후 분포와 사전 분포 사이의 KL Divergence → $z_s$가 모델링하는 공유 정보가 얼마나 잘 학습되었는지를 나타내는 지표
+> - $\lambda_2D_{KL}(q_{\theta_2}(z_t'\vert x_t, z_s)\Vert p_{\phi_t}(z_t'|z_s))$ : 텍스트 도메인에 특화된 잠재 변수 $z_t'$에 대한 사후 분포와 사전 분포 사이의 DKL → 텍스트 데이터의 도메인별 정보가 얼마나 잘 학습되었는지를 나타냄
+> - $\lambda_3D_{KL}(q_{\theta_3}(z_v'\vert x_v, z_s)\Vert p_{\phi_v})$ : 이미지 도메인에 특화된 잠재변수 $z_v'$에 대한 사후 분포와 사전 분포 사이의 DKL → 이미지 데이터의 도메인별 정보가 얼마나 잘 학습되었는지를 나타냄
 > - $\lambda_4L^{rec}_t(x_t,\tilde{x}_t)$ : 텍스트 데이터에 대한 재구성 손실을 나타냄, 이는 원래의 텍스트 데이터 $x_t$와 모델에 의해 재구성된 $\tilde{x}_t$ 사이의 차이를 측정
 > - $\lambda_5L^{rec}_v(x_v,\tilde{x}_v)$ : 이미지 데이터에 대한 재구성 손실을 나타냄, 이는 원래의 이미지 데이터 $x_v$와 모델에 의해 재구성된 이미지 $\tilde{x}_v$의 차이를 측정
 > - $\lambda$는 이러한 다양한 항목의 중요도를 조정하는 가중치
@@ -258,7 +272,7 @@ $\tilde{x}_t$와 $\tilde{x}*v$는 텍스트와 이미지 샘플들로 디코딩�
 
 연구진은 모델이 양방향 다대다 매핑을 허용한다고 말합니다. 예를 들어, 이미지 도메인으로부터의 데이터 포인트 $x_v$가 주어지고 이로 부터 잠재 인코딩 $z_v$가 주어지면, 이를 텍스트 도메인으로 매핑합니다. 이 때, 가역 변환을 통해 매핑합니다. ($z_s = f_{\phi_s}(z_s)$) 
 
-따라서 학습된 잠재 사전 확률 $p_{\phi_s}(z'_t|z_s)$로부터의 샘플링을 통해 다양한 텍스트를 생성해낼 수 있다고 합니다. 텍스트를 주어 이미지를 샘플링 하는 경우에도 학습된 사전 확률 $p_{\phi_s}(z'_v|z_s)$를 통해 유사한 절차를 따릅니다.
+따라서 학습된 잠재 사전 확률 $p_{\phi_s}(z'_t\vert z_s)$로부터의 샘플링을 통해 다양한 텍스트를 생성해낼 수 있다고 합니다. 텍스트를 주어 이미지를 샘플링 하는 경우에도 학습된 사전 확률 $p_{\phi_s}(z'_v\vert z_s)$를 통해 유사한 절차를 따릅니다.
 
 조건부 생성 작업의 경우, supervised 잠재 공간에서 샘플링할 필요가 없기 때문에, 균일 사전 확률 $p_{\phi_s}(z_s)$가 실제 응용에서 이점이 됩니다. ( → 디코더에 대한 제약을 완화하므로)
 
