@@ -160,14 +160,14 @@ $$
 $$
 <br/><br/>chain rule을 이용하여 KL-divergence term은 아래와 같이 단순화 될 수 있습니다.  <br/><br/>
 $$
-\begin{align} D_{KL}(q_θ(z_s, z'_t, z'_v|x_t, x_v) \Vert p_φ(z_s, z'_t, z'_v )) = D_{KL}(q_{θ_1} (z_s|x'_t, x_v)\Vert p_{φ_s} (z_s))+\\
+\begin{align} D_{KL}(q_θ(z_s, z'_t, z'_v|x_t, x_v) \Vert p_φ(z_s, z'_t, z'_v )) = D_{KL}(q_{θ_1} (z_s|x'_t, x_v)\Vert p_{φ_s} (z_s))+\
 D_{KL}(q_{θ_2}(z'_t|x_t,z_s) p_{φ_t}(z'_t|z_s))+D_{KL}(q_{θ_3}(z'_v|x_v,z_s) \Vert p_{φ_v}(z'_v|z_s))\end{align}
 $$
 
 <br/><br/>따라서 최종 ELBO는 다음과 같이 정의됩니다.<br/><br/>
 $$
-\begin{align}logp_μ(x_t,x_v) ≥ E_{q_{θ_1}(z_\vert x_t,x_v)q_{θ_2}(z'_t\vert x_t,z_s)}[logp_μ(x_t\vert z_s,z'_t)]\\
-+E_{q_{θ_1}(z_s\vert x_t,x_v)q_{θ_3}(z'_v \vert x_v,z_s)}[logp_μ(x_v\vert z_s,z'_v )]−D_{KL}(q_{θ_1}(z_s\vert x_t,x_v)\Vert p_{φ_s}(z_s)) \\−D_{KL}(q_{θ_2}(z'_t\vert x_t,z_s) p_{φ_t}(z'_t\vert z_s))−D_{KL}(q_{θ_3}(z'_v \vert x_v,z_s) \Vert p_{φ_v}(z'_v \vert z_s))\end{align}
+\begin{align}logp_μ(x_t,x_v) ≥ E_{q_{θ_1}(z_\vert x_t,x_v)q_{θ_2}(z'_t\vert x_t,z_s)}[logp_μ(x_t\vert z_s,z'_t)]\
++E_{q_{θ_1}(z_s\vert x_t,x_v)q_{θ_3}(z'_v \vert x_v,z_s)}[logp_μ(x_v\vert z_s,z'_v )]−D_{KL}(q_{θ_1}(z_s\vert x_t,x_v)\Vert p_{φ_s}(z_s)) \−D_{KL}(q_{θ_2}(z'_t\vert x_t,z_s) p_{φ_t}(z'_t\vert z_s))−D_{KL}(q_{θ_3}(z'_v \vert x_v,z_s) \Vert p_{φ_v}(z'_v \vert z_s))\end{align}
 $$
 
 
@@ -239,7 +239,7 @@ $h_{\omega_v}:z_v \mapsto x_v$ 그리고 $h_{\omega_t}:z_t \mapsto x_t$ 는 각�
 
 논문 초반부의 ELBO, 학습된 latent priors, 가역 매핑, 그리고 방금 정의한 reconstruction terms를 연결하여, semi-supervised generative model framework의 목적함수는 아래의 식을 최소화하는 것이 됩니다.<br/>
 
-$$\begin{align} L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v)\Vert p_{\phi_s}(z_s))+\\\lambda_2D_{KL}(q_{\theta_2}(z_t'\vert x_t, z_s)\Vert p_{\phi_t}(z_t'\vert z_s))+\lambda_3D_{KL}(q_{\theta_3}(z_v'\vert x_v, z_s)\Vert p_{\phi_v}(z_v'\vert z_s))+\\\lambda_4L^{rec}_t(x_t,\tilde{x}_t) + \lambda_5L^{rec}_v(x_v,\tilde{x}_v)\end{align}$$
+$$\begin{align} L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v)\Vert p_{\phi_s}(z_s))+\ \lambda_2D_{KL}(q_{\theta_2}(z_t'\vert x_t, z_s)\Vert p_{\phi_t}(z_t'\vert z_s))+\lambda_3D_{KL}(q_{\theta_3}(z_v'\vert x_v, z_s)\Vert p_{\phi_v}(z_v'\vert z_s))+\ \lambda_4L^{rec}_t(x_t,\tilde{x}_t) + \lambda_5L^{rec}_v(x_v,\tilde{x}_v)\end{align}$$
 
 
 
