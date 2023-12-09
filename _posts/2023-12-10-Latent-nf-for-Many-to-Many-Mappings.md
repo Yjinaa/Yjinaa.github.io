@@ -145,39 +145,34 @@ variational posterior을 이용해 직접적으로  $p_\mu(x_t, x_v)$의 log-lik
 
 ### *3.1 Deriving The Log-Evidence Lower Bound*
 
-$p_\mu (x_t, x_v)$ 의 marginal likelihood를 최대화하는 것은 intractable합니다. 따라서 variational inference framework를 개발했는데, 이는 데이터의 log-likelihood의 variational lower bound를 최대화합니다.   
+$p_\mu (x_t, x_v)$ 의 marginal likelihood를 최대화하는 것은 intractable합니다. 따라서 variational inference framework를 개발했는데, 이는 데이터의 log-likelihood의 variational lower bound를 최대화합니다.   <br/><br/>
+
+$$\begin{align} log{p_\mu} (x_t, x_v) \ge E_{q_\theta(z\vert x_t,x_v)}[logp_\mu(x_t, x_v\vert z)] + E_{q_\theta(z\vert x_t,x_v)}[logp_\phi(z) - logq_\theta(z\vert x_t, x_v)]\end{align} $$
+
+<br/><br/>여기서 첫 번째 텀은 reconstruction error입니다. 두 번째 텀은 variational posterior과 prior간 KL-divergence를 최소화합니다. 앞서 말한 factorization을 통해 reconstruction term을 아래와 같이 작성할 수 있습니다.   <br/><br/>
+
+$$Eq_θ(z_s,z'_t,z'_v \vert x_t,x_v)[logp_μ(x_t\vert z_s,z'_t,z'_v )+logp_μ(x_v\vert z_s,z'_t,z'_v )]$$
 
 
-$$
-log{p_\mu} (x_t, x_v) \ge E_{q_\theta(z\vert x_t,x_v)}[logp_\mu(x_t, x_v\vert z)] + E_{q_\theta(z\vert x_t,x_v)}[logp_\phi(z) - logq_\theta(z\vert x_t, x_v)]
-$$
 
-
-여기서 첫 번째 텀은 reconstruction error입니다. 두 번째 텀은 variational posterior과 prior간 KL-divergence를 최소화합니다. 앞서 말한 factorization을 통해 reconstruction term을 아래와 같이 작성할 수 있습니다.   
-
-
-$$
-Eq_θ(z_s,z'_t,z'_v \vert x_t,x_v)[logp_μ(x_t\vert z_s,z'_t,z'_v )+logp_μ(x_v\vert z_s,z'_t,z'_v )]
-$$
-
-도메인별 잠재 차원 $z'_t, z'_v$ 와 공유된 잠재 차원 $z_s$의 조건부 독립을 가정한다면 아래와 같이 단순화 될 수 있습니다.  <br/>
+<br/><br/>도메인별 잠재 차원 $z'_t, z'_v$ 와 공유된 잠재 차원 $z_s$의 조건부 독립을 가정한다면 아래와 같이 단순화 될 수 있습니다.  <br/><br/>
 $$
 E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_2}(z'_t|x_t,z_s)}[logp_μ(x_t|z_s,z'_t)]+E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_3}(z'_v |x_v,z_s)}[logp_μ(x_v|z_s,z'_v )]
 $$
-<br/>chain rule을 이용하여 KL-divergence term은 아래와 같이 단순화 될 수 있습니다.  <br/>
+<br/><br/>chain rule을 이용하여 KL-divergence term은 아래와 같이 단순화 될 수 있습니다.  <br/><br/>
 $$
 D_{KL}(q_θ(z_s, z'_t, z'_v|x_t, x_v) \Vert p_φ(z_s, z'_t, z'_v )) = D_{KL}(q_{θ_1} (z_s|x'_t, x_v)\Vert p_{φ_s} (z_s))+\\
 D_{KL}(q_{θ_2}(z'_t|x_t,z_s) p_{φ_t}(z'_t|z_s))+D_{KL}(q_{θ_3}(z'_v|x_v,z_s) \Vert p_{φ_v}(z'_v|z_s))
 $$
 
-<br/>따라서 최종 ELBO는 다음과 같이 정의됩니다.
+<br/><br/>따라서 최종 ELBO는 다음과 같이 정의됩니다.<br/><br/>
 $$
 logp_μ(x_t,x_v) ≥ E_{q_{θ_1}(z_\vert x_t,x_v)q_{θ_2}(z'_t\vert x_t,z_s)}[logp_μ(x_t\vert z_s,z'_t)]\\
 +E_{q_{θ_1}(z_s\vert x_t,x_v)q_{θ_3}(z'_v \vert x_v,z_s)}[logp_μ(x_v\vert z_s,z'_v )]−D_{KL}(q_{θ_1}(z_s\vert x_t,x_v)\Vert p_{φ_s}(z_s)) \\−D_{KL}(q_{θ_2}(z'_t\vert x_t,z_s) p_{φ_t}(z'_t\vert z_s))−D_{KL}(q_{θ_3}(z'_v \vert x_v,z_s) \Vert p_{φ_v}(z'_v \vert z_s)]
 $$
 
 
-<br/>표준 VAE formulation에서는, 이미지와 텍스트에 해당하는 priors가 정규분포로 모델링되었습니다. 그러나, 가우시안 priors는 posterior에 강한 규제를 주기 때문에 모델의 표현력에 제한을 줄 수 있습니다. 
+<br/><br/>표준 VAE formulation에서는, 이미지와 텍스트에 해당하는 priors가 정규분포로 모델링되었습니다. 그러나, 가우시안 priors는 posterior에 강한 규제를 주기 때문에 모델의 표현력에 제한을 줄 수 있습니다. 
 
 특히, 가우시안 Prior로 최적화를 시키는 것은 posterior를 mean쪽으로 push하기 때문에, 모델의 생성력을 저하시키며 다양성을 제한합니다. 이는 이미지와 텍스트를 함께 다루는 복합 멀티 모달에 특히 더 해당하는 이야기입니다. 더불어, 가우시안 mixture model-based priors와 같은 대체재들 또한 같은 약점을 가지고 있으며, 추가적으로 복합 모델에서의 요소의 개수와 같은 미리 정의된 휴리스틱에 의존합니다. 유사하게, VamPrior는 priors를 학습하기 위해 pseudo-inputs의 미리 정의된 숫자에 의존합니다. 
 
@@ -237,17 +232,16 @@ $h_{\omega_v}:z_v \mapsto x_v$ 그리고 $h_{\omega_t}:z_t \mapsto x_t$ 는 각�
 
 텍스트에 대해서는, 텍스트 디코더로부터의 이전 reconstruced words $(\tilde{x})_{0:j-1}$에서 주어진 ground truth 문장 $x_t$의 $j^{th}$단어에 대한 출력 확률 $(x_t)_j$를 고려하고, reconstruction error을 정의합니다.
 
- → $L^{rec}_t(x_t, \tilde{x}*t)=-\sum_jlogp*\mu((x_t)_j\vert (\tilde{x}*t)*{0:j-1})$
+ → $$L^{rec}_t(x_t, \tilde{x}*t)=-\sum_jlogp*\mu((x_t)_j\vert (\tilde{x}*t)*{0:j-1})$$
 
 이미지에 관해서는, input image $x_v$와 reconstructed 이미지 $\tilde{x}_v$ 사이의 reconstruction error는 $L^{rec}_v(x_v,\tilde{x}_v)=\Vert x_v-\tilde{x}_v\Vert ,$  이 때 $\Vert \cdot\Vert $는 $\ell_1, \ell_2$  둘 다 가능합니다.
 
 더불어  $logq_{\theta_1}(f_{\phi_s}((z_v)*{d'})\vert x_t)$를 $(z_v)*{d'}$를 $f_{\phi_s}$ 아래의 텍스트의 잠재 공간으로의 매핑하는데의 코스트로 정의합니다.  짝을 이루는 데이터 $(x_t, x_v)$의 인코딩된 텍스트 표현 $(z_t)*{d'}$와 변환된 이미지 표현 $f*{\phi_s}((z_v)_{d'})$ 사이에 mse를 이용합니다.
 
-논문 초반부의 ELBO, 학습된 latent priors, 가역 매핑, 그리고 방금 정의한 reconstruction terms를 연결하여, semi-supervised generative model framework의 목적함수는 아래의 식을 최소화하는 것이 됩니다.
+논문 초반부의 ELBO, 학습된 latent priors, 가역 매핑, 그리고 방금 정의한 reconstruction terms를 연결하여, semi-supervised generative model framework의 목적함수는 아래의 식을 최소화하는 것이 됩니다.<br/>
 
-$$
-L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v)\Vert p_{\phi_s}(z_s))+\\\lambda_2D_{KL}(q_{\theta_2}(z_t'\vert x_t, z_s)\Vert p_{\phi_t}(z_t'\vert z_s))+\lambda_3D_{KL}(q_{\theta_3}(z_v'\vert x_v, z_s)\Vert p_{\phi_v}(z_v'\vert z_s))+\\\lambda_4L^{rec}_t(x_t,\tilde{x}_t) + \lambda_5L^{rec}_v(x_v,\tilde{x}_v)
-$$
+$$L_\mu(x_t, x_v) = \lambda_1D_{KL}(q_{\theta_1}(z_s\vert x_t, x_v)\Vert p_{\phi_s}(z_s))+\\\lambda_2D_{KL}(q_{\theta_2}(z_t'\vert x_t, z_s)\Vert p_{\phi_t}(z_t'\vert z_s))+\lambda_3D_{KL}(q_{\theta_3}(z_v'\vert x_v, z_s)\Vert p_{\phi_v}(z_v'\vert z_s))+\\\lambda_4L^{rec}_t(x_t,\tilde{x}_t) + \lambda_5L^{rec}_v(x_v,\tilde{x}_v)$$
+
 
 
 > **Loss의 구성**
