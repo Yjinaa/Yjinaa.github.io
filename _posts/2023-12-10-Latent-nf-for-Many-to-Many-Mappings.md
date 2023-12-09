@@ -95,17 +95,15 @@ COCO 데이터셋에서 real-world의 이미지 캡셔닝과 text-to-image 합�
 
 (Related Work는 생략했습니다.)          
 
-텍스트와 이미지가 각각 서로 다른 생성 과정을 따르며, 각각의 ground truth 분포 $p_t(x_t)$와 $p_v(x_v)$를 가지는 상황에서, semi-supervised setting 하에 텍스트와 이미지의 joint distributions $p_\mu (x_t, x_v)$를 학습하기 위해, 변분 추론을 기반으로 하는 새로운 joint 생성 모델을 고안함 : Latent Normalizing Flows for Many-to-Many Mappings(LNFMM)
+텍스트와 이미지가 각각 서로 다른 생성 과정을 따르며, 각각의 ground truth 분포 $p_t(x_t)$와 $p_v(x_v)$를 가지는 상황에서, semi-supervised setting 하에 텍스트와 이미지의 joint distributions $p_\mu (x_t, x_v)$를 학습하기 위해, 변분 추론을 기반으로 하는 새로운 joint 생성 모델을 고안했습니다. : Latent Normalizing Flows for Many-to-Many Mappings(LNFMM)
 
-해당 모델은 joint 확률분포를 데이터 ${x_t, x_v}$와 latent variables $z$를 $\mu$로 파라미터화 되는 분포 $p_\mu (x_t, x_v, z) = p_\mu(x_t, x_v|z)p_\mu(z)$와 함께 정의함
+해당 모델은 joint 확률분포를 데이터 ${x_t, x_v}$와 latent variables $z$를 $\mu$로 파라미터화 되는 분포 $p_\mu (x_t, x_v, z) = p_\mu(x_t, x_v|z)p_\mu(z)$와 함께 정의했습니다.
 
 여기서 $\theta$로 파라미터화 되는 variational posterior $q_\theta(z|x_t, x_v)$를 이용해 $p_\mu(x_t, x_v)$의 likelihood를 극대화함
 
-서로 다른 생성 과정을 가진 분포들, 예를 들어 이미지와 텍스트를 공동으로 모델링하는 데 관심이 있기 때문에, latent 분포의 선택이 매우 중요함
+서로 다른 생성 과정을 가진 분포들, 예를 들어 이미지와 텍스트를 공동으로 모델링하는 데 관심이 있기 때문에, latent 분포의 선택이 매우 중요합니다. 
 
-공유된 잠재 분포로의 매핑은 굉장히 제한적일 수 있음
-
-이 논문에서는 LNFMM 모델의 variational posterior $q_\theta(z|x_t, x_v)$과 그 factorization(분해)에서부터 논의를 시작하고, 그 다음 normalizing flow 기반의 priors에 대해 소개할 예정임. priors는  $q_\theta(z|x_t, x_v)$가 더욱 복잡하도록, 그리고 multimodal로 만들어주어, 다양한 다대다 매핑을 가능하게 함
+공유된 잠재 분포로의 매핑은 굉장히 제한적일 수 있습니다. 이 논문에서는 LNFMM 모델의 variational posterior $q_\theta(z|x_t, x_v)$과 그 factorization(분해)에서부터 논의를 시작하고, 그 다음 normalizing flow 기반의 priors에 대해 소개합니다.. priors는  $q_\theta(z|x_t, x_v)$가 더욱 복잡하도록, 그리고 multimodal로 만들어주어, 다양한 다대다 매핑을 가능하게 합니다.
 
 ### Factorizing the latent posterior
 
