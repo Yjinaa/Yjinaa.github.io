@@ -69,7 +69,7 @@ Ziegler & Rush(2019)는 normalizing flow 베이스 priors를 unconditional varia
 
 그리고 새로운 semi-supervised 프레임워크를 도입하는데, 이게 바로 *Latent Normalizing Flows For Many-to-Many Mapping(LNFMM)*입니다.
 
-Normalizing flows를 모델의 잠재 공간에서 복잡한 joint 분포를 포착하기 위해 적극적으로 활용합니다. ***(Fig1)***
+Normalizing flows를 모델의 잠재 공간에서 복잡한 joint 분포를 포착하기 위해 적극적으로 활용합니다.
 
 더욱이, 고려되는 도메인들(이미지와 텍스트)들이 서로 다른 생성 과정을 가지므로, 각 분포에 해당하는 latent representation은 공유된 크로스 도메인 정보와 도메인별 정보를 모두 포함하도록 모델링됩니다.
 
@@ -97,9 +97,14 @@ COCO 데이터셋에서 real-world의 이미지 캡셔닝과 text-to-image 합�
 
 텍스트와 이미지가 각각 서로 다른 생성 과정을 따르며, 각각의 ground truth 분포 $p_t(x_t)$와 $p_v(x_v)$를 가지는 상황에서, semi-supervised setting 하에 텍스트와 이미지의 joint distributions $p_\mu (x_t, x_v)$를 학습하기 위해, 변분 추론을 기반으로 하는 새로운 joint 생성 모델을 고안했습니다. : Latent Normalizing Flows for Many-to-Many Mappings(LNFMM)
 
+<<<<<<< HEAD
 해당 모델은 joint 확률분포를 데이터 ${x_t, x_v}$와 latent variables $z$를 $\mu$로 파라미터화 되는 분포 $p_\mu (x_t, x_v, z) = p_\mu(x_t, x_v\vert z)p_\mu(z)$와 함께 정의했습니다.
+=======
+해당 모델은 joint 확률분포를 데이터 ${x_t, x_v}$와 latent variables 
+$z$를 $\mu$로 파라미터화 되는 분포 $p_\mu (x_t, x_v, z) = p_\mu(x_t, x_v|z)p_\mu(z)$와 함께 정의했습니다.
+>>>>>>> 41657e6db5ad113bba61d5cd46c27a70aacadbe3
 
-여기서 $\theta$로 파라미터화 되는 variational posterior $q_\theta(z|x_t, x_v)$를 이용해 $p_\mu(x_t, x_v)$의 likelihood를 극대화함
+여기서 $\theta$로 파라미터화 되는 variational posterior $q_\theta(z|x_t, x_v)$를 이용해 $p_\mu(x_t, x_v)$의 likelihood를 극대화합니다.
 
 서로 다른 생성 과정을 가진 분포들, 예를 들어 이미지와 텍스트를 공동으로 모델링하는 데 관심이 있기 때문에, latent 분포의 선택이 매우 중요합니다. 
 
@@ -144,38 +149,33 @@ variational posterior을 이용해 직접적으로  $p_\mu(x_t, x_v)$의 log-lik
 
 $p_\mu (x_t, x_v)$ 의 marginal likelihood를 최대화하는 것은 intractable합니다. 따라서 variational inference framework를 개발했는데, 이는 데이터의 log-likelihood의 variational lower bound를 최대화합니다.   
 
-  
+
 $$
 log{p_\mu} (x_t, x_v) \ge E_{q_\theta(z|x_t,x_v)}[logp_\mu(x_t, x_v|z)] + E_{q_\theta(z|x_t,x_v)}[logp_\phi(z) - logq_\theta(z|x_t, x_v)]
 $$
-  
+
 
 여기서 첫 번째 텀은 reconstruction error입니다. 두 번째 텀은 variational posterior과 prior간 KL-divergence를 최소화합니다. 앞서 말한 factorization을 통해 reconstruction term을 아래와 같이 작성할 수 있습니다.   
 
-  
+
 $$
 Eq_θ(z_s,z'_t,z'_v |x_t,x_v)[logp_μ(x_t|z_s,z'_t,z'_v )+logp_μ(x_v|z_s,z'_t,z'_v )]
 $$
-  
 
-도메인별 잠재 차원 $z'_t, z'_v$ 와 공유된 잠재 차원 $z_s$의 조건부 독립을 가정한다면 아래와 같이 단순화 될 수 있습니다.
-
-  
+도메인별 잠재 차원 $z'_t, z'_v$ 와 공유된 잠재 차원 $z_s$의 조건부 독립을 가정한다면 아래와 같이 단순화 될 수 있습니다.  
 $$
 E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_2}(z'_t|x_t,z_s)}[logp_μ(x_t|z_s,z'_t)]+E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_3}(z'_v |x_v,z_s)}[logp_μ(x_v|z_s,z'_v )]
 $$
-  
-
-chain rule을 이용하여 KL-divergence term은 아래와 같이 단순화 될 수 있습니다.
-
-  
+chain rule을 이용하여 KL-divergence term은 아래와 같이 단순화 될 수 있습니다.  
+>>>>>>> 41657e6db5ad113bba61d5cd46c27a70aacadbe3
 $$
 D_{KL}(q_θ(z_s, z'_t, z'_v|x_t, x_v) \Vert p_φ(z_s, z'_t, z'_v )) = D_{KL}(q_{θ_1} (z_s|x'_t, x_v)\Vert p_{φ_s} (z_s))+\\
 D_{KL}(q_{θ_2}(z'_t|x_t,z_s) p_{φ_t}(z'_t|z_s))+D_{KL}(q_{θ_3}(z'_v|x_v,z_s) \Vert p_{φ_v}(z'_v|z_s))
 $$
-  
+
 
 따라서 최종 ELBO는 다음과 같이 정의됩니다.
+
 $$
 logp_μ(x_t,x_v) ≥ E_{q_{θ_1}(z_\vert x_t,x_v)q_{θ_2}(z'_t\vert x_t,z_s)}[logp_μ(x_t\vert z_s,z'_t)]\\
 +E_{q_{θ_1}(z_s\vert x_t,x_v)q_{θ_3}(z'_v \vert x_v,z_s)}[logp_μ(x_v\vert z_s,z'_v )]−D_{KL}(q_{θ_1}(z_s\vert x_t,x_v)\Vert p_{φ_s}(z_s)) \\−D_{KL}(q_{θ_2}(z'_t\vert x_t,z_s) p_{φ_t}(z'_t\vert z_s))−D_{KL}(q_{θ_3}(z'_v \vert x_v,z_s) \Vert p_{φ_v}(z'_v \vert z_s)]
@@ -231,6 +231,8 @@ $f_{\phi_s}$는 affine coupling layers를 이용한 가역 신경망입니다.  
 supervision signal로 차원을 conditioning함으로써, 연구진은 차원을 풀지 않고도 unsupervised information에 대한 차원에서의 중복성을 최소화했다고 합니다.
 
 $q_{\theta_2}(z'*t\vert z_s, x_t)$와 $q*{\theta_3}(z'_v\vert z_s, x_v)$의 멀티 모달 조건부 사전 확률은 *Eq.7*의 non-volumne-preserving normalizing flow 모델을 통해 학습되며, 이는 각각 $\phi_t$와 $\phi_v$에 의해 파라미터화됩니다.
+
+>>>>>>> 41657e6db5ad113bba61d5cd46c27a70aacadbe3
 
 데이터의 log-likelihood terms는 (negative) reconstruction errors로 정의됩니다.
 
