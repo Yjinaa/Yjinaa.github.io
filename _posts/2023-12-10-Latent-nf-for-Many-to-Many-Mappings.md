@@ -154,6 +154,7 @@ $$\begin{align} log{p_\mu} (x_t, x_v) \ge E_{q_\theta(z\vert x_t,x_v)}[logp_\mu(
 $$\begin{align} Eq_θ(z_s,z'_t,z'_v \vert x_t,x_v)[logp_μ(x_t\vert z_s,z'_t,z'_v )+logp_μ(x_v\vert z_s,z'_t,z'_v )]\end{align}$$
 
 
+
 <br/><br/>도메인별 잠재 차원 $z'_t, z'_v$ 와 공유된 잠재 차원 $z_s$의 조건부 독립을 가정한다면 아래와 같이 단순화 될 수 있습니다.  <br/><br/>
 $$
 \begin{align} E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_2}(z'_t|x_t,z_s)}[logp_μ(x_t|z_s,z'_t)]+E_{q_{θ_1}(z_s|x_t,x_v)q_{θ_3}(z'_v |x_v,z_s)}[logp_μ(x_v|z_s,z'_v )]\end{align}
