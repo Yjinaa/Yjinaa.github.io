@@ -43,7 +43,7 @@ use_math: true
 
 그렇다면 Redundancy error를 해결하기 위해서는 어떻게 해야할까? 
 
-나는 [논문]['https://arxiv.org/pdf/1703.03130.pdf'] 에서 소개한 것처럼 로스 함수에 Penalty Term을 추가하는 방법을 사용했다. 해당 논문에서, 다양성을 평가하기 위해서는 Kullback Leibler divergence를 사용하는 것이 가장 이상적인 방법이지만 자기들의 케이스에서는 안정적이지 않았다고 한다. 이는 일반적으로 KL divergence 하나를 최소화하는 대신, 여러 KL divergence를 최대화하고 있기 때문에 이러한 상황이 발생한다고 짐작한다고.. 매트릭스에 0값이 너무 많기 때문에 훈련이 unstable 해진다고 한다. 연구진이 원하는 것은 모델이 의미론적 측면에서 각각의 개별 요소에 집중하도록 하는 것인데, KL divergence는 보통 두 확률 분포간의 차이를 최소화 하는 데 사용되지만 이 경우에는 개별 요소의 집중도를 높이는 데는 적합하지 않다고 판단한 것. 따라서 이러한 문제를 해결하기 위해 새로운 penalization term을 도입했다. 
+나는 [논문]('https://arxiv.org/pdf/1703.03130.pdf') 에서 소개한 것처럼 로스 함수에 Penalty Term을 추가하는 방법을 사용했다. 해당 논문에서, 다양성을 평가하기 위해서는 Kullback Leibler divergence를 사용하는 것이 가장 이상적인 방법이지만 자기들의 케이스에서는 안정적이지 않았다고 한다. 이는 일반적으로 KL divergence 하나를 최소화하는 대신, 여러 KL divergence를 최대화하고 있기 때문에 이러한 상황이 발생한다고 짐작한다고.. 매트릭스에 0값이 너무 많기 때문에 훈련이 unstable 해진다고 한다. 연구진이 원하는 것은 모델이 의미론적 측면에서 각각의 개별 요소에 집중하도록 하는 것인데, KL divergence는 보통 두 확률 분포간의 차이를 최소화 하는 데 사용되지만 이 경우에는 개별 요소의 집중도를 높이는 데는 적합하지 않다고 판단한 것. 따라서 이러한 문제를 해결하기 위해 새로운 penalization term을 도입했다. 
 $$
 \begin{align} P = \Vert (AA^T-I\Vert_F^2\end{align}
 $$
