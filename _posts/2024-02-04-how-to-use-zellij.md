@@ -13,19 +13,21 @@ use_math: true
 
 &#160;&#160;&#160; 서버 원격을 이용해 모델 학습을 시켜놔도 가끔 윈도우가 업데이트 되거나, 어떠한 이유로 로컬 컴퓨터가 나가면 학습이 중단 되는 것이 고민이었습니다. 그런데 사수분께서 zellij라는 좋은 툴을 알려주셔서 해당 툴의 사용 방법을 작성해보았습니다. 
 
-   
+<br/>
 
-   
+<br/>
 
-   
+<br/>
 
 # Zellij란?
 
 zellij란 터미널 멀티 플렉서로, 하나의 터미널 화면에 여러 개의 터미널을 각각 독립적으로 관리할 수 있습니다. 또한, 원격 터미널 세션 안에서 여러 별도의 터미널 세션에 액세스 할 수 있으며, 하나 이상의 세션을 attach 혹은 detach하여 관리할 수 있습니다. 이를 활용하면 나의 로컬 컴퓨터가 꺼지더라도, 모델은 zellij에서 계속 학습되게 됩니다. 내가 할 일은? 그냥 꺼진 컴퓨터를 다시 켠 후 zellij를 attach 하면 됩니다!
 
-   
+<br/>
 
-   
+<br/>
+
+<br/>
 
 ## zellij 설치하기
 
@@ -33,13 +35,11 @@ zellij란 터미널 멀티 플렉서로, 하나의 터미널 화면에 여러 �
 
 처음에는 binary 파일로 설치를 도전했는데, 왜인지 제대로 설치되지 않아 cargo를 이용했습니다.
 
-   
+<br/>
 
-   
+<br/>
 
-   
-
-## cargo 설치
+<br/>cargo 설치
 
 우선 cargo를 이용해 zellij를 설치하려면, cargo를 먼저 설치해야합니다. 
 
@@ -57,13 +57,11 @@ Rust is installed now. Great!
 
 설치를 성공적으로 마친 모습입니다! 만일 윈도우를 사용하고 계시다면, [이 링크](https://win.rustup.rs/)를 클릭해 exe 파일을 받아주셔야합니다.
 
-   
+<br/>
 
-   
+<br/>
 
-   
-
-
+<br/>
 
 ## zellij 설치
 
@@ -79,11 +77,11 @@ cargo install --locked zellij
 rustup update
 ```
 
-   
+<br/>
 
-   
+<br/>
 
-   
+<br/>
 
 ## 세션 attach 하기
 
@@ -97,7 +95,7 @@ zellij list-sessions
 
 여기서 해야 할 것은, 하나의 세션을 골라서 attach하는 것 뿐입니다! 저는 이미 create된 세션들이 몇 개 보이네요.
 
-   
+<br/>
 
 profound-elephant 세션을 attach 해보겠습니다.
 
@@ -109,11 +107,11 @@ zellij attach profound-elephant
 
 attach가 완료된 모습입니다. 이제 터미널을 원하는대로 사용하시면 됩니다!
 
-   
+<br/>
 
-   
+<br/>
 
-   
+<br/>
 
 ## tab 여러개 생성해서 하나의 터미널에서 관리하기
 
@@ -127,11 +125,11 @@ zellij에서는 하나의 터미널 세션에서 tab을 여러개 생성하여 �
 
 세 개의 탭이 생성된 것을 보실 수 있습니다! 탭간 이동은 마우스 클릭으로도 가능합니다. 그리고 위의 pane이라는 글자가 보이시나요? 하나의 터미널 안에서 구역을 나눌 수도 있습니다.
 
-   
+<br/>
 
-   
+<br/>
 
-   
+<br/>
 
 ## pane 추가하기
 
@@ -139,13 +137,11 @@ zellij에서는 하나의 터미널 세션에서 tab을 여러개 생성하여 �
 
 <img width="578" alt="image" src="https://github.com/Yjinaa/Yjinaa.github.io/assets/71372857/1c1f5751-94d0-4925-b438-7987744af27a">
 
-   
+<br/>
 
-   
+<br/>
 
-   
-
-
+<br/>
 
 ## detach 하기
 
@@ -155,13 +151,11 @@ zellij에서는 하나의 터미널 세션에서 tab을 여러개 생성하여 �
 
 이렇게 귀여운 작별인사를 남겨줍니다. 이후 다시 attach 할 때는, 위의 attach 명령어를 동일하게 사용하시면 됩니다!
 
-   
+<br/>
 
-   
+<br/>
 
-   
-
-
+<br/>
 
 ## 필요하지 않은 세션 kill 하기
 
@@ -175,13 +169,11 @@ zellij kill-sessions [세션명]
 
 kill 명령어를 준 후 list-sessions를 확인하니, 맨 아랫줄의 profound-elephant가 비활성화 된 것을 볼 수 있습니다.
 
-   
+<br/>
 
-   
+<br/>
 
-   
-
-
+<br/>
 
 ## 마치면서
 
