@@ -17,13 +17,9 @@ use_math: true
 
 <br/>
 
-<br/>
-
 # Zellij란?
 
 zellij란 터미널 멀티 플렉서로, 하나의 터미널 화면에 여러 개의 터미널을 각각 독립적으로 관리할 수 있습니다. 또한, 원격 터미널 세션 안에서 여러 별도의 터미널 세션에 액세스 할 수 있으며, 하나 이상의 세션을 attach 혹은 detach하여 관리할 수 있습니다. 이를 활용하면 나의 로컬 컴퓨터가 꺼지더라도, 모델은 zellij에서 계속 학습되게 됩니다. 내가 할 일은? 그냥 꺼진 컴퓨터를 다시 켠 후 zellij를 attach 하면 됩니다!
-
-<br/>
 
 <br/>
 
@@ -39,15 +35,17 @@ zellij란 터미널 멀티 플렉서로, 하나의 터미널 화면에 여러 �
 
 <br/>
 
-<br/>cargo 설치
+## cargo 설치
 
 우선 cargo를 이용해 zellij를 설치하려면, cargo를 먼저 설치해야합니다. 
 
 리눅스 혹은 맥의 경우, 터미널에 아래와 같이 입력하여 설치할 수 있습니다.
 
-```shell
+```sh
 curl https://sh.rustup.rs -sSf | sh
 ```
+
+  
 
 위 명령어로 설치하고 나면, 아래의 명령어가 표시될 것입니다.
 
@@ -56,8 +54,6 @@ Rust is installed now. Great!
 ```
 
 설치를 성공적으로 마친 모습입니다! 만일 윈도우를 사용하고 계시다면, [이 링크](https://win.rustup.rs/)를 클릭해 exe 파일을 받아주셔야합니다.
-
-<br/>
 
 <br/>
 
@@ -76,8 +72,6 @@ cargo install --locked zellij
 ```shell
 rustup update
 ```
-
-<br/>
 
 <br/>
 
@@ -111,13 +105,11 @@ attach가 완료된 모습입니다. 이제 터미널을 원하는대로 사용�
 
 <br/>
 
-<br/>
-
 ## tab 여러개 생성해서 하나의 터미널에서 관리하기
 
-zellij에서는 하나의 터미널 세션에서 tab을 여러개 생성하여 여러 터미널에 접근할 수 있습니다. 하나의 화면에서 각기 다른 일을 하고 있는 터미널들에 접근이 가능하다는 뜻입니다. 새 탭을 생성하려면, ctrl + t를 누르고 n을 눌러주시면 됩니다.
+zellij에서는 하나의 터미널 세션에서 tab을 여러개 생성하여 여러 터미널에 접근할 수 있습니다. 하나의 화면에서 각기 다른 일을 하고 있는 터미널들에 접근이 가능하다는 뜻입니다. 새 탭을 생성하려면, `ctrl + t`를 누르고 `n`을 눌러주시면 됩니다.
 
-그런데 여기서 저처럼 vscode를 사용하시는 분들의 경우, 이미 생성되어있는 키보드 shortcut 때문에 엉뚱한 기능이 실행될 수 있습니다. 그럴 때는 ctrl + shift + p에서 shortcut을 검색하여 기존에 사용되는 ctrl + t에 해당하는 단축키를 바꿔주시는 것이 좋습니다.
+그런데 여기서 저처럼 vscode를 사용하시는 분들의 경우, 이미 생성되어있는 키보드 shortcut 때문에 엉뚱한 기능이 실행될 수 있습니다. 그럴 때는 `ctrl + shift + p`에서 shortcut을 검색하여 기존에 사용되는 `ctrl + t`에 해당하는 단축키를 바꿔주시는 것이 좋습니다.
 
 아래는 탭을 생성한 모습입니다.
 
@@ -129,11 +121,9 @@ zellij에서는 하나의 터미널 세션에서 tab을 여러개 생성하여 �
 
 <br/>
 
-<br/>
-
 ## pane 추가하기
 
-탭을 생성할 때와 비슷하게, ctrl + p를 누른 후 n을 누르면 됩니다. 아래는 Pane을 추가한 모습입니다.
+탭을 생성할 때와 비슷하게, `ctrl + p`를 누른 후 `n`을 누르면 됩니다. 아래는 Pane을 추가한 모습입니다.
 
 <img width="578" alt="image" src="https://github.com/Yjinaa/Yjinaa.github.io/assets/71372857/1c1f5751-94d0-4925-b438-7987744af27a">
 
@@ -141,17 +131,13 @@ zellij에서는 하나의 터미널 세션에서 tab을 여러개 생성하여 �
 
 <br/>
 
-<br/>
-
 ## detach 하기
 
-모든 작업을 마치고, 이제 모델이 이대로 돌아가기만 하면 됩니다. 그럴 땐 ctrl + q를 사용해 detach를 할 수 있습니다.
+모든 작업을 마치고, 이제 모델이 이대로 돌아가기만 하면 됩니다. 그럴 땐 `ctrl + q`를 사용해 detach를 할 수 있습니다.
 
 <img width="475" alt="image" src="https://github.com/Yjinaa/Yjinaa.github.io/assets/71372857/e0198dfb-fa14-47d8-8c13-daf6841159d1">
 
 이렇게 귀여운 작별인사를 남겨줍니다. 이후 다시 attach 할 때는, 위의 attach 명령어를 동일하게 사용하시면 됩니다!
-
-<br/>
 
 <br/>
 
@@ -168,8 +154,6 @@ zellij kill-sessions [세션명]
 <img width="591" alt="스크린샷 2024-02-04 오후 2 42 32" src="https://github.com/Yjinaa/Yjinaa.github.io/assets/71372857/1cc8623e-cb5c-4060-9d09-4437d740e27a">
 
 kill 명령어를 준 후 list-sessions를 확인하니, 맨 아랫줄의 profound-elephant가 비활성화 된 것을 볼 수 있습니다.
-
-<br/>
 
 <br/>
 
