@@ -24,7 +24,7 @@ name                     : "Yeajin Byun"
 description              : "Yjinaa's ThinkSpace"
 url                      : "https://yjinaa.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "Yjinaa/Yjinaa.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "https://github.com/yjinaa/yjinaa.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "./assets/img/favicon/apple-touch-icon.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "Hello, World!" # overrides the website title displayed in the masthead, use " " for no title
@@ -116,12 +116,12 @@ author:
   name             : "Yeajin Byun"
   avatar           : "./assets/img/profile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Hi, I'm Yeajin Byun. I'm passionate about helping people fully realize their potential in the metaverse. I'm particulary interested in Music Information Retrieval and Music Generation, with the goal of enabling everyone to express their musical creativity, regardless of their background knowledge. \n I also enjoy singing, playing the piano, and savoring a good glass of wine! 😌"
-  location         : "Incheon, Korea"
+  location         : "Incheon, Republic of Korea"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "yejnbn@gmail.com"
+      url: mailto:yejnbn@gmail.com
     - label: "LinkedIn"
       icon: "fas fa-fw fa-link"
       url: "https://www.linkedin.com/in/yjinaa/"
@@ -141,24 +141,24 @@ author:
 # Site Footer
 footer:
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:yejnbn@gmail.com
+    - label: "LinkedIn"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.linkedin.com/in/yjinaa/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url:
+      # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
+      url: "https://github.com/Yjinaa"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      # url: "https://instagram.com/"
 
 
 # Reading Files
@@ -324,14 +324,11 @@ defaults:
       share: true
       related: true
       show_date: true
+
+  # _pages
   - scope:
-      path: "About"
-      type: posts
+      path: ""
+      type: pages
     values:
       layout: single
       author_profile: true
-      read_time: false
-      comments: # true
-      share: true
-      related: true
-      show_date: true      
