@@ -4,9 +4,12 @@ date: 2021-10-20 21:19:00 +0300
 description: 데이터 분석 입문을 위한 통계
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [statistics,study,probability] # add tag
+tags: [statistics] # add tag
 use_math: true
-categories: [study-notes]
+categories:
+   - Study Notes
+sidebar:
+   nav: "blog"
 ---
 
 ## 들어가면서 

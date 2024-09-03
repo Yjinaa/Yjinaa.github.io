@@ -21,6 +21,8 @@ main:
     url: "/projects/"
   - title: "Achievements"
     url: "/achievements/"
+  - title: "Performances"
+    url: "/performances/"
   - title: "Blog"
     url: "/blog/"
 

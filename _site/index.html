@@ -93,6 +93,29 @@
 
 <!-- end custom head snippets -->
 
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+      inlineMath: [ ['$', '$'] ],
+      displayMath: [ ['$$', '$$'] ],
+      processEscapes: true
+    }
+  });
+  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      alert("Math Processing Error: "+message[1]);
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
   </head>
 
   <body class="layout--single" dir="ltr">
@@ -141,6 +164,12 @@
                 
                 
               >Achievements</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/performances/"
+                
+                
+              >Performances</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/blog/"

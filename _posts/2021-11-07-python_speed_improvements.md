@@ -4,9 +4,11 @@ date: 2021-11-07 23:10:00 +0300
 description: 파이썬의 여러가지 속도 개선 방법
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [python,speed] # add tag
-use_math: true
-categories: [study-notes]
+tags: [python]
+categories:
+   - Study Notes
+sidebar:
+   nav: "blog"
 ---
 
 ## **들어가면서** 
