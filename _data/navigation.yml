@@ -15,10 +15,50 @@
 main:
   - title: "About"
     url: "/about/"
-  - title: "Quick-Start Guide"
-    url: "/docs/quick-start-guide/"
-  - title: "Posts"
-    url: "/posts/"
+  - title: "Experience"
+    url: "/experience/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Achievements"
+    url: "/achievements/"
+  - title: "Blog"
+    url: "/blog/"
+
+blog:
+  - title: "Categories"
+    children:
+      - title: "Paper Reading"
+        url: /blog/paper-reading/
+      - title: "Research Applications"
+        url: /blog/research-applications/
+      - title: "Reflections"
+        url: /blog/reflections/
+      - title: "Event Recaps"
+        url: /blog/event-recaps/
+      - title: "Study Notes"
+        url: /blog/study-notes/
+      - title: "Productivity Hacks"
+        url: /blog/productivity-hacks/
+      - title: "Debugging Diaries"
+        url: /blog/debugging-diaries/
+      - title: "Etc"
+        url: /blog/etc/
+      # - title: "Tag"
+      #   url: /tags/
+
+projects:
+  - title: "All Projects"
+    url: /projects/
+    children:
+      - title: "Unauthorized AI Training Protection Service, Porotect"
+        url: /projects/porotect/
+      - title: "Audience Prediction Project Using Big Data Analysis"
+        url: /projects/audience-prediction/
+
+  # - title: "Quick-Start Guide"
+  #   url: /docs/quick-start-guide/
+  # - title: "Posts"
+  #   url: /posts/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Terms &amp; Privacy Policy"
