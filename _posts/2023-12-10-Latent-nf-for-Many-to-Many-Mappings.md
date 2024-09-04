@@ -4,7 +4,7 @@ date: 2023-12-10 00:23:00 +0900
 description: 논문 리뷰
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [] # add tag
+tags: [txt2img] # add tag
 use_math: true
 categories:
   - Paper Reading
