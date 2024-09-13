@@ -20,12 +20,12 @@ Explore my career journey, milestones, and key experiences that have shaped my p
 *October 2023 - August 2024*
 *Intern: October 2023 - December 2023*
 
-- **Conducted research on voice conversion and timbre generation**
-  - Improved speaker embedding models.
-  - Designed and implemented a new architecture tailored to the domain by adapting the txt2img model for txt2spkemb tasks.
+- **Conducted research on human timbre generation using prompts and voice conversion**
+  - Referenced the txt2img model using Normalizing Flows (NF) and fully converted it into an architecture suitable for txt2spkemb tasks.
+    - Improved speaker embedding module by replacing the LSTM layer with TDNN + self-attention to address concerns about gradient vanishing in long sequences.
+    - Applied LoRA for efficient fine-tuning in the txt module, reducing parameters from 111M to 1.2M.
   - Enhanced multi-speaker support by replacing the speaker embedder in the speech synthesis model.
-  - Utilized LoRA (Low-Rank Adaptation) to reduce the number of parameters during fine-tuning, effectively lightweighting the model.
-
+  - Optimized the data tagging process by simplifying a complex system into an intuitive structure and creating a guideline, resulting in the dataset expanding more than 5 times from 800.
 ---
 
 ### *Researcher at RealData, Seoul*

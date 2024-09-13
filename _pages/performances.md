@@ -7,7 +7,7 @@ author_profile: true
 #     nav: "performances"
 ---
 
-### # 🎵 Busking Performances
+## 🎵 Busking Performances
 
 Welcome to my collection of busking performances! Below, you'll find videos and photos from two memorable busking events. Enjoy the experience!
 
