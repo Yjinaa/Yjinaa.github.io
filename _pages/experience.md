@@ -30,29 +30,29 @@ Explore my career journey, milestones, and key experiences that have shaped my p
 **Result**
 - Original wav 1
 <audio controls>
-  <source src="assets/audio/audio1.wav" type="audio/wav">
+  <source src="assets/audio/audio1.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-==> ₩prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"₩
+=> prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"
 
 - Converted wav 1
 <audio controls>
-  <source src="assets/audio/audio2.wav" type="audio/wav">
+  <source src="assets/audio/audio2.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 - Original wav 2
 <audio controls>
-  <source src="assets/audio/audio3.wav" type="audio/wav">
+  <source src="assets/audio/audio3.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-==> ₩prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"₩
+=> prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"
 
 - Converted wav 2
 <audio controls>
-  <source src="assets/audio/audio4.wav" type="audio/wav">
+  <source src="assets/audio/audio4.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
