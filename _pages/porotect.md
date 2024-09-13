@@ -43,9 +43,10 @@ Below is an example of applying Protecteck using Picasso's "Weeping Woman" as th
 - The above slide provides an explanation of the two key loss functions in the Protect mechanism and shows how they are applied in practice.
 
 <video width="300" controls>
-  <source src="/assets/porotect/noise_process.mp4" type="video/mp4">
+  <source src="/assets/videos/noise_process.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
 - This video shows the process of noise being added and then gradually optimized through loss adjustments, making the noise imperceptible to the human eye.
 
 ![Comparison with Glaze](/assets/img/porotect/comparison.png)
