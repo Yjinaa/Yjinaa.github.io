@@ -9,5 +9,5 @@ sidebar:
 
 ### 🌈 My Projects
 
-- [Unauthorized AI Training Protection Service, Porotect](/projects/porotect/)
-- [Movie Audience Prediction Project through Big Data Analysis](/projects/audience-prediction/)
+- [A Protection Service Against Unauthorized AI Training, Porotect](/projects/porotect/)
+- [Movie Audience Prediction Project through Big Data](/projects/audience-prediction/)

@@ -1,12 +1,12 @@
 ---
-title: "Unauthorized AI Training Protection Service, Porotect"
+title: "A Protection Service Against Unauthorized AI Training, Porotect"
 layout: single
 permalink: /projects/porotect/
 sidebar:
     nav: "projects"
 ---
 
-### Unauthorized AI Training Protection Service, Porotect
+### A Protection Service Against Unauthorized AI Training, Porotect
 
 *POSCO AI & Big Data Academy*
 
