@@ -21,7 +21,7 @@ Explore my career journey, milestones, and key experiences that have shaped my p
 *Intern: October 2023 - December 2023*
 
 - **Conducted research on human timbre generation using prompts and voice conversion**
-  - Referenced the txt2img model using Normalizing Flows (NF) and fully converted it into an architecture suitable for txt2spkemb tasks.
+  - Referenced the txt2img model using Normalizing Flows and fully converted it into an architecture suitable for txt2spkemb tasks.
     - Improved speaker embedding module by replacing the LSTM layer with TDNN + self-attention to address concerns about gradient vanishing in long sequences.
     - Applied LoRA for efficient fine-tuning in the txt module, reducing parameters from 111M to 1.2M.
   - Enhanced multi-speaker support by replacing the speaker embedder in the speech synthesis model.
