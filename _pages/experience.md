@@ -29,32 +29,32 @@ Explore my career journey, milestones, and key experiences that have shaped my p
 
 **Result**
 - Original wav 1
-<audio controls>
-  <source src="assets/audio/audio1.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+<video width="200" controls>
+  <source src="/assets/videos/audio1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 => prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"
 
 - Converted wav 1
-<audio controls>
-  <source src="assets/audio/audio2.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+<video width="200" controls>
+  <source src="/assets/videos/audio2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 - Original wav 2
-<audio controls>
-  <source src="assets/audio/audio3.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+<video width="200" controls>
+  <source src="/assets/videos/audio3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 => prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"
 
 - Converted wav 2
-<audio controls>
-  <source src="assets/audio/audio4.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+<video width="200" controls>
+  <source src="/assets/videos/audio4.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
