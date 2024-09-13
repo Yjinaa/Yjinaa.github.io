@@ -43,8 +43,8 @@ Below is an example of applying Protecteck using Picasso's "Weeping Woman" as th
 ![How to Protect Artworks](/assets/img/porotect/how_to_protect_artwork.png)
 - The above slide provides an explanation of the two key loss functions in the Protect mechanism and shows how they are applied in practice.
 
-![Noise Intensity Change](/assets/img/porotect/process.gif)
-- This gif shows the process from a noise-free state to gradually increasing noise intensity. During this process, the noise is finely tuned.
+![Noise Optimizing](/assets/img/porotect/noise_process.gif)
+- This GIF shows the process of noise being added and then gradually optimized through loss adjustments, making the noise imperceptible to the human eye.
 
 ![Comparison with Glaze](/assets/img/porotect/comparison.png)
 - This is a comparison with Glaze. As you can see, the result of Protect shows less visible noise compared to Glaze, and the mathematical similarity difference is very small, at just 0.004.
