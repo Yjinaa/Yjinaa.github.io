@@ -23,9 +23,8 @@ Developed a defensive mechanism to prevent unauthorized replication of an artist
 ### Challenges in Previous Research (Glaze):
 
 In comparison to previous work like Glaze, our approach addresses two key limitations:
-
-	1.	Excessive number of training images: According to artists’ feedback on Reddit, Glaze requires a large dataset, often more than 50 images, to achieve meaningful results. Our method significantly reduces the number of training images needed while maintaining performance and generalization.
-	2.	Noticeable perturbations in illustrations: When applying Glaze to illustrations, the perturbations added to the images can be visually prominent. Our method minimizes the visibility of these perturbations, ensuring that they remain imperceptible to the human eye, even in illustrations.
+1.	Excessive number of training images: According to artists’ feedback on Reddit, Glaze requires a large dataset, often more than 50 images, to achieve meaningful results. Our method significantly reduces the number of training images needed while maintaining performance and generalization.
+2.	Noticeable perturbations in illustrations: When applying Glaze to illustrations, the perturbations added to the images can be visually prominent. Our method minimizes the visibility of these perturbations, ensuring that they remain imperceptible to the human eye, even in illustrations.
 
 
 ### Final Goal:
@@ -43,7 +42,7 @@ Below is an example of applying Protecteck using Picasso's "Weeping Woman" as th
 ![How to Protect Artworks](/assets/img/porotect/how_to_protect_artwork.png)
 - The above slide provides an explanation of the two key loss functions in the Protect mechanism and shows how they are applied in practice.
 
-![Noise Optimizing](/assets/img/porotect/noise_process.gif)
+![Noise Optimizing](/assets/img/porotect/noise_process.mov)
 - This GIF shows the process of noise being added and then gradually optimized through loss adjustments, making the noise imperceptible to the human eye.
 
 ![Comparison with Glaze](/assets/img/porotect/comparison.png)
