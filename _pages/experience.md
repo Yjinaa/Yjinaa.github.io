@@ -26,6 +26,36 @@ Explore my career journey, milestones, and key experiences that have shaped my p
     - Applied LoRA for efficient fine-tuning in the txt module, reducing parameters from 111M to 1.2M.
   - Enhanced multi-speaker support by replacing the speaker embedder in the speech synthesis model.
   - Optimized the data tagging process by simplifying a complex system into an intuitive structure and creating a guideline, resulting in the dataset expanding more than 5 times from 800.
+
+**Result**
+- Original wav 1
+<audio controls>
+  <source src="assets/audio/audio1.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+==> ₩prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"₩
+
+- Converted wav 1
+<audio controls>
+  <source src="assets/audio/audio2.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+- Original wav 2
+<audio controls>
+  <source src="assets/audio/audio3.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+==> ₩prompt: "20대 여성으로 음높이가 높고 차분하고 부드러운 목소리"₩
+
+- Converted wav 2
+<audio controls>
+  <source src="assets/audio/audio4.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
 ---
 
 ### *Researcher at RealData, Seoul*
