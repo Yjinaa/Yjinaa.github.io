@@ -14,10 +14,10 @@ Welcome to my collection of busking performances! Below, you'll find videos and 
 ---
 ## 🎤 Performance 1: RIVS Regular Concert
 
-<video width="400" controls>
+<!-- <video width="400" controls>
   <source src="/assets/videos/rivs.mp4" type="video/mp4">
   Your browser does not support the video tag.
-</video>
+</video> -->
 
 
 ## 🎤 Performance 2: Spontaneous RIVS Busking
