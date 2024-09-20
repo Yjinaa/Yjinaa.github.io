@@ -27,7 +27,7 @@ Explore my career journey, milestones, and key experiences that have shaped my p
   - Enhanced multi-speaker support by replacing the speaker embedder in the speech synthesis model.
   - Optimized the data tagging process by simplifying a complex system into an intuitive structure and creating a guideline, resulting in the dataset expanding more than 5 times from 800.
 
-**Result**
+<!-- **Result**
 - Original wav 1
 <video width="200" controls>
   <source src="/assets/videos/audio1.mp4" type="video/mp4">
@@ -54,7 +54,7 @@ Explore my career journey, milestones, and key experiences that have shaped my p
 <video width="200" controls>
   <source src="/assets/videos/audio4.mp4" type="video/mp4">
   Your browser does not support the video tag.
-</video>
+</video> -->
 
 ---
 
