@@ -1,6 +1,6 @@
 ---
 permalink: /
-layout: single
+layout: home
 title: "About"
 excerpt: "About Me"
 last_modified_at: 2024-09-01T11:59:26-04:00

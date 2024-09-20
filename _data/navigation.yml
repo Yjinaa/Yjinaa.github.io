@@ -13,8 +13,6 @@
 
 # main links
 main:
-  - title: "Home"
-    url: "https://yjinaa.github.io"
   - title: "About"
     url: "/about/"
   - title: "Experience"
