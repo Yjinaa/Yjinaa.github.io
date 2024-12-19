@@ -12,16 +12,20 @@ sidebar: false
 
 
 ## Welcome!
-Hi, I'm Yeajin Byun. I'm passionate about helping people fully realize their potential in the metaverse. I'm particulary interested in **Music Information Retrieval** and **Music Generation**, with the goal of enabling everyone to express their musical creativity, regardless of their background knowledge. 
+Hi, I'm Yeajin Byun. My passion lies in using data analysis to uncover unrecognized needs and deliver meaningful value to people. By integrating generative modeling, I aim to make advanced technologies accessible and intuitive, enabling individuals to harness their potential and explore new possibilities effortlessly.
 
-### My Passions
 
+### A Glimpse of Me
 - 🎤 **Singing**: I love expressing myself through song.
 - 🎹 **Playing the Piano**: There's nothing quite like the feel of keys under my fingers.
 - 🍷 **Enjoying Wine**: I appreciate a good glass of wine.😌
 
 ### Why I Do What I Do
-My dream is to create environments where creativity flourishes, especially in the metaverse. By combining technology with music, I believe we can unlock incredible new experiences and possibilities.
+My dream is to create environments where technology empowers people in meaningful ways. Through data analysis, I aim to uncover unrecognized needs and deliver personalized value to individuals. By leveraging generative modeling, I strive to make advanced technologies accessible to everyone, enabling them to utilize these tools effortlessly.
+
+### My CV
+You can download my CV [here]({{ "/assets/files/cv.pdf" | relative_url }}).
+
 ---
 
-Feel free to explore and connect with me as we dive into the exciting realms of music and technology together!
+Feel free to explore and connect with me as we delve into the fascinating worlds of data and technology together!
