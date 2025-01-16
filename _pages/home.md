@@ -23,8 +23,8 @@ Hi, I'm Yeajin Byun. My passion lies in using data analysis to uncover unrecogni
 ### Why I Do What I Do
 My dream is to create environments where technology empowers people in meaningful ways. Through data analysis, I aim to uncover unrecognized needs and deliver personalized value to individuals. By leveraging generative modeling, I strive to make advanced technologies accessible to everyone, enabling them to utilize these tools effortlessly.
 
-### My CV
-You can download my CV [here]({{ "/assets/files/cv.pdf" | relative_url }}).
+### My Resume
+You can download my Resume [here]({{ "/assets/files/resume_260116_3.pdf" | relative_url }}).
 
 ---
 
