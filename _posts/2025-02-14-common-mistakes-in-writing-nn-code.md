@@ -30,7 +30,7 @@ sidebar:
 <br/>
 
 <img src="https://github.com/user-attachments/assets/3a443556-addc-41c8-a36f-189b9794a511"
-     width="80%"
+     width="60%"
      style="display: block; margin: auto;" />
 <br/>
 <br/>
