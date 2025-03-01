@@ -39,13 +39,13 @@ $z$에 $f(x)$를 적용해가며 복잡한 분포로 변환하는데, 이 때 �
 <br/>
 <br/>
 
-## reverse = True와 False
+# reverse = True와 False
 
 코드를 작성하다보면, training에서는 reverse = False 옵션으로, infer에서는 reverse=True 옵션을 사용하게 된다. 이 이유는 다음과 같다.
 <br/>
 <br/>
 
-###  forward pass (reverse=False)
+##  forward pass (reverse=False)
 
 forward pass는 복잡한 분포 $x_i$로부터 $z$를 만들어내는 과정이다. 즉 주어진 데이터 $x_i$에서 단순한 분포 $z$를 만들어내도록 $f^{-1}(x)$를 곱해준다.
 <br/>
@@ -85,7 +85,7 @@ $logp(x_i)$는 $x_i$의 확률밀도 값, 즉 학습 데이터 $x_i$가 모델�
 <br/>
 <br/>
 
-### infer(reverse=True)
+## infer(reverse=True)
 
 여기서는 $z$를 복잡한 분포 $x$로 변환한다. 이미 training 과정에서 모델링이 끝났으므로 모델이 할 일은 그저 정규분포에서 샘플링한 $z$를 식에 통과만 시켜주면 된다. 아까는 $x$에 $f{-1}$를 가했지만, 지금은 $z$에 $f$를 가해 $x$를 생성하는 것이다.
 
@@ -93,7 +93,7 @@ $logp(x_i)$는 $x_i$의 확률밀도 값, 즉 학습 데이터 $x_i$가 모델�
 <br/>
 <br/>
 
-## affine coupling layer
+# affine coupling layer
 
 앞서 normalizing flow의 성립 조건이 두가지라고 언급했다.
 <br/>
