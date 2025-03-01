@@ -326,6 +326,8 @@ defaults:
       share: true
       related: true
       show_date: true
+      toc: true
+      toc_stickey: true
 
   # _pages
   - scope:

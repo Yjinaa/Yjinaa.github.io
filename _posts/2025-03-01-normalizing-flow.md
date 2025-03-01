@@ -4,6 +4,8 @@ date: 2025-03-01 14:59:00 +0900
 description: 우도와 확률의 개념
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
+toc: true
+toc_stickey: true
 tags: [AI] # add tag
 use_math: true
 categories:
