@@ -4,7 +4,7 @@ date: 2024-02-02 18:45:00 +0900
 description: 
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [coding] # add tag
+tags: [CodingTest] # add tag
 use_math: true
 categories:
   - Etc

@@ -7,7 +7,7 @@ fig-caption: # Add figcaption (optional)
 tags: [AI] # add tag
 use_math: true
 categories:
-  - Research Applications
+  - Debugging Diaries
 sidebar:
     nav: "blog"
 ---

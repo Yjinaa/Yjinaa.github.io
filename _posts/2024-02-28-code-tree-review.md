@@ -4,6 +4,7 @@ date: 2024-02-28 18:29:00 +0900
 description: 코드트리 솔직 후기
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
+tags: [CodingTest] # add tag
 categories:
   - Etc
 sidebar:

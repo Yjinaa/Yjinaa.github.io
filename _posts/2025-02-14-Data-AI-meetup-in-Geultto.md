@@ -1,7 +1,7 @@
 ---
 title: 글또 10기 Data/AI 빌리지 반상회 후기
 date: 2024-02-14 18:04:00 +0900
-description: 10기 Data/AI 빌리지 반상회에 다녀왔습니다!
+description: 글또 Data/AI 빌리지 반상회에 다녀왔습니다!
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Gueltto] # add tag
