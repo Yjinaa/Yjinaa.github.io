@@ -1,6 +1,6 @@
 ---
 title: 새로워진 코드트리 두달 사용기
-date: 2024-03-04 20:18:00 +0900
+date: 2025-03-04 20:18:00 +0900
 description: 새로워진 코드트리 두달 사용기
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
@@ -25,20 +25,16 @@ sidebar:
 기존에는 난이도별 책을 구매하여 학습하는 방식이었으나, 현재는 6개의 트레일로 구성되어 더욱 체계적인 학습이 가능해졌습니다.
 
 <br/>
+
 <img src="https://github.com/user-attachments/assets/6accb43c-70ed-4c67-ae3a-b5cb9b5baf98"
-
      width="50%"
-
      style="display: block; margin: auto;" />
+
 <img src="https://github.com/user-attachments/assets/845fa46e-5d02-4964-8e61-2acbfe60276f"
-
      width="50%"
-
      style="display: block; margin: auto;" />
 <img src="https://github.com/user-attachments/assets/f463c081-c311-4bfe-be61-c5097a71a7b6"
-
      width="50%"
-
      style="display: block; margin: auto;" />
 
 <br/>
@@ -90,9 +86,7 @@ dx, dy의 순서를 단순히 외워서 사용했기 때문에 문제가 조금�
 <br/>
 
 <img src="https://github.com/user-attachments/assets/a9c12145-6b04-48c0-a484-f13fbbda0040"
-
      width="50%"
-
      style="display: block; margin: auto;" />
 
 <br/>
@@ -107,9 +101,7 @@ dx, dy 테크닉뿐만 아니라 다른 개념들도 기초부터 차근차근 �
 <br/>
 
 <img src="https://github.com/user-attachments/assets/eca7e8e1-703b-4b78-9faa-ee8e88e0cc00"
-
      width="50%"
-
      style="display: block; margin: auto;" />
 
 <br/>
@@ -118,9 +110,7 @@ dx, dy 테크닉뿐만 아니라 다른 개념들도 기초부터 차근차근 �
 
 <br/>
 <img src="https://github.com/user-attachments/assets/3ea2d60c-9c1d-4b12-9788-577d7a36430f"
-
      width="50%"
-
      style="display: block; margin: auto;" />
 <br/>
 <br/>
