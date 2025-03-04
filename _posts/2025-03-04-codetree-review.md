@@ -27,14 +27,14 @@ sidebar:
 <br/>
 
 <img src="https://github.com/user-attachments/assets/6accb43c-70ed-4c67-ae3a-b5cb9b5baf98"
-     width="70%"
+     width="80%"
      style="display: block; margin: auto;" />
 
 <img src="https://github.com/user-attachments/assets/845fa46e-5d02-4964-8e61-2acbfe60276f"
-     width="70%"
+     width="80%"
      style="display: block; margin: auto;" />
 <img src="https://github.com/user-attachments/assets/f463c081-c311-4bfe-be61-c5097a71a7b6"
-     width="70%"
+     width="80%"
      style="display: block; margin: auto;" />
 
 <br/>
@@ -101,7 +101,7 @@ dx, dy 테크닉뿐만 아니라 다른 개념들도 기초부터 차근차근 �
 <br/>
 
 <img src="https://github.com/user-attachments/assets/eca7e8e1-703b-4b78-9faa-ee8e88e0cc00"
-     width="80%"
+     width="90%"
      style="display: block; margin: auto;" />
 
 <br/>
