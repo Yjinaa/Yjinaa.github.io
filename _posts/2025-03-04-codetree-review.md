@@ -36,8 +36,6 @@ sidebar:
 <img src="https://github.com/user-attachments/assets/f463c081-c311-4bfe-be61-c5097a71a7b6"
      width="80%"
      style="display: block; margin: auto;" />
-
-<br/>
 <br/>
 
 트레일별 분류가 훨씬 직관적으로 개선되어, 현재 나의 실력이 어느 정도인지 또는 추가적으로 얼마나 더 학습해야 하는지를 한눈에 파악할 수 있어 매우 유용합니다.
