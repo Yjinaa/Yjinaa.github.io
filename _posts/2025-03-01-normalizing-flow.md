@@ -5,7 +5,7 @@ description: 우도와 확률의 개념
 img:  # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 toc: true
-toc_stickey: true
+toc_sticky: true
 tags: [AI] # add tag
 use_math: true
 categories:
